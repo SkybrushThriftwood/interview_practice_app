@@ -1,0 +1,21 @@
+[project]
+name = "interview-practice-app"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Thomas",email = "lucke.thomas@gmx.com"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "black (>=25.11.0,<26.0.0)",
+    "ruff (>=0.14.5,<0.15.0)",
+    "requests (>=2.32.5,<3.0.0)",
+    "openai (>=2.8.1,<3.0.0)",
+    "streamlit (>=1.51.0,<2.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
