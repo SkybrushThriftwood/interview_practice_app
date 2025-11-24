@@ -1,0 +1,460 @@
+2025-11-20 19:58:30,577 [INFO] __main__: User attempting to start interview with job_title=hubabuba ingeneur, type=Behavioral, difficulty=Easy
+2025-11-20 19:58:34,205 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-20 19:58:49,522 [INFO] __main__: User attempting to start interview with job_title=hubabuba ingeneur, type=Behavioral, difficulty=Easy
+2025-11-20 19:58:54,599 [INFO] __main__: User attempting to start interview with job_title=hubabuba ingeneur, type=Behavioral, difficulty=Easy
+2025-11-20 19:58:55,113 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-20 19:58:55,297 [INFO] __main__: User attempting to start interview with job_title=hubabuba ingeneur, type=Behavioral, difficulty=Easy
+2025-11-20 19:58:55,994 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-20 19:58:58,392 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-20 19:59:11,107 [INFO] __main__: User attempting to start interview with job_title=hubabuba ingeneur, type=Behavioral, difficulty=Easy
+2025-11-20 19:59:13,581 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-20 20:01:49,674 [INFO] __main__: User attempting to start interview with job_title=baker, type=Behavioral, difficulty=Easy
+2025-11-20 20:01:53,638 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-20 20:05:41,476 [INFO] __main__: User attempting to start interview with job_title=engineer, type=Behavioral, difficulty=Easy
+2025-11-20 20:05:46,172 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-20 20:35:06,136 [INFO] __main__: User attempting to start interview with job_title=eingener, type=Behavioral, difficulty=Easy
+2025-11-20 20:35:09,722 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-20 20:35:36,256 [INFO] __main__: User attempting to start interview with job_title=eingener, type=Behavioral, difficulty=Easy
+2025-11-20 20:35:38,012 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-20 20:38:09,677 [INFO] __main__: User attempting to start interview with job_title=Engineer, type=Behavioral, difficulty=Easy
+2025-11-20 20:38:12,857 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-20 20:38:19,239 [INFO] __main__: User attempting to start interview with job_title=Engineer, type=Behavioral, difficulty=Easy
+2025-11-20 20:38:23,386 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-20 20:38:24,272 [INFO] __main__: User attempting to start interview with job_title=Engineer, type=Behavioral, difficulty=Easy
+2025-11-20 20:38:27,878 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-20 20:38:40,652 [INFO] __main__: User attempting to start interview with job_title=Baker, type=Behavioral, difficulty=Easy
+2025-11-20 20:38:42,769 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-20 20:38:42,786 [ERROR] modules.utils: Error rendering template 'question_prompts.j2': macro 'generate_question' takes no keyword argument 'previous_answers'
+Traceback (most recent call last):
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 58, in get_prompt
+    return macro(**kwargs)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\runtime.py", line 759, in __call__
+    raise TypeError(
+TypeError: macro 'generate_question' takes no keyword argument 'previous_answers'
+2025-11-20 20:38:43,080 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 400 Bad Request"
+2025-11-20 20:38:43,081 [ERROR] modules.utils: Error in 'openai_call': Error code: 400 - {'error': {'message': "Invalid type for 'input[0].content': expected one of an array of objects or string, but got an object instead.", 'type': 'invalid_request_error', 'param': 'input[0].content', 'code': 'invalid_type'}}
+Traceback (most recent call last):
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 22, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 37, in openai_call
+    response = client.responses.create(
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\openai\resources\responses\responses.py", line 859, in create
+    return self._post(
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid type for 'input[0].content': expected one of an array of objects or string, but got an object instead.", 'type': 'invalid_request_error', 'param': 'input[0].content', 'code': 'invalid_type'}}
+2025-11-20 20:38:43,121 [INFO] __main__: Interview started for job_title=Baker
+2025-11-20 20:39:06,630 [INFO] __main__: Interview restarted by user
+2025-11-20 20:39:31,330 [INFO] __main__: User attempting to start interview with job_title=baker, type=Behavioral, difficulty=Easy
+2025-11-20 20:39:32,748 [INFO] __main__: User attempting to start interview with job_title=baker, type=Behavioral, difficulty=Easy
+2025-11-20 20:39:33,005 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-20 20:39:36,217 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-20 20:39:36,225 [ERROR] modules.utils: Error rendering template 'question_prompts.j2': macro 'generate_question' takes no keyword argument 'previous_answers'
+Traceback (most recent call last):
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 58, in get_prompt
+    return macro(**kwargs)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\runtime.py", line 759, in __call__
+    raise TypeError(
+TypeError: macro 'generate_question' takes no keyword argument 'previous_answers'
+2025-11-20 20:39:36,593 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 400 Bad Request"
+2025-11-20 20:39:36,594 [ERROR] modules.utils: Error in 'openai_call': Error code: 400 - {'error': {'message': "Invalid type for 'input[0].content': expected one of an array of objects or string, but got an object instead.", 'type': 'invalid_request_error', 'param': 'input[0].content', 'code': 'invalid_type'}}
+Traceback (most recent call last):
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 22, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 37, in openai_call
+    response = client.responses.create(
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\openai\resources\responses\responses.py", line 859, in create
+    return self._post(
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid type for 'input[0].content': expected one of an array of objects or string, but got an object instead.", 'type': 'invalid_request_error', 'param': 'input[0].content', 'code': 'invalid_type'}}
+2025-11-20 20:39:36,595 [INFO] __main__: Interview started for job_title=baker
+2025-11-20 20:39:46,012 [INFO] __main__: Interview restarted by user
+2025-11-20 20:40:46,199 [INFO] __main__: User attempting to start interview with job_title=baker, type=Behavioral, difficulty=Easy
+2025-11-20 20:40:48,126 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-20 20:40:57,527 [INFO] __main__: User attempting to start interview with job_title=baker, type=Behavioral, difficulty=Easy
+2025-11-20 20:40:59,280 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-20 20:40:59,980 [INFO] __main__: User attempting to start interview with job_title=baker, type=Behavioral, difficulty=Easy
+2025-11-20 20:41:01,131 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-20 20:41:01,886 [INFO] __main__: User attempting to start interview with job_title=baker, type=Behavioral, difficulty=Easy
+2025-11-20 20:41:03,430 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-20 20:42:39,836 [INFO] __main__: User attempting to start interview with job_title=baker, type=Behavioral, difficulty=Easy
+2025-11-20 20:42:41,972 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-20 20:42:41,979 [ERROR] modules.utils: Error rendering template 'question_prompts.j2': macro 'generate_question' takes no keyword argument 'previous_answers'
+Traceback (most recent call last):
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 58, in get_prompt
+    return macro(**kwargs)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\runtime.py", line 759, in __call__
+    raise TypeError(
+TypeError: macro 'generate_question' takes no keyword argument 'previous_answers'
+2025-11-20 20:42:42,297 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 400 Bad Request"
+2025-11-20 20:42:42,297 [ERROR] modules.utils: Error in 'openai_call': Error code: 400 - {'error': {'message': "Invalid type for 'input[0].content': expected one of an array of objects or string, but got an object instead.", 'type': 'invalid_request_error', 'param': 'input[0].content', 'code': 'invalid_type'}}
+Traceback (most recent call last):
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 22, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 37, in openai_call
+    response = client.responses.create(
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\openai\resources\responses\responses.py", line 859, in create
+    return self._post(
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid type for 'input[0].content': expected one of an array of objects or string, but got an object instead.", 'type': 'invalid_request_error', 'param': 'input[0].content', 'code': 'invalid_type'}}
+2025-11-20 20:42:42,298 [INFO] __main__: Interview started for job_title=baker
+2025-11-20 20:42:47,718 [INFO] __main__: Interview restarted by user
+2025-11-20 20:42:58,600 [INFO] __main__: User attempting to start interview with job_title=engineer, type=Behavioral, difficulty=Easy
+2025-11-20 20:43:02,555 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-20 20:45:01,745 [INFO] __main__: User attempting to start interview with job_title=engineer, type=Behavioral, difficulty=Easy
+2025-11-20 20:45:04,363 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-20 20:45:08,015 [INFO] __main__: User attempting to start interview with job_title=engineer, type=Behavioral, difficulty=Easy
+2025-11-20 20:45:09,960 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-20 20:45:09,965 [ERROR] modules.utils: Error rendering template 'question_prompts.j2': macro 'generate_question' takes no keyword argument 'previous_answers'
+Traceback (most recent call last):
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 58, in get_prompt
+    return macro(**kwargs)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\runtime.py", line 759, in __call__
+    raise TypeError(
+TypeError: macro 'generate_question' takes no keyword argument 'previous_answers'
+2025-11-20 20:45:10,300 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 400 Bad Request"
+2025-11-20 20:45:10,300 [ERROR] modules.utils: Error in 'openai_call': Error code: 400 - {'error': {'message': "Invalid type for 'input[0].content': expected one of an array of objects or string, but got an object instead.", 'type': 'invalid_request_error', 'param': 'input[0].content', 'code': 'invalid_type'}}
+Traceback (most recent call last):
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 22, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 37, in openai_call
+    response = client.responses.create(
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\openai\resources\responses\responses.py", line 859, in create
+    return self._post(
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid type for 'input[0].content': expected one of an array of objects or string, but got an object instead.", 'type': 'invalid_request_error', 'param': 'input[0].content', 'code': 'invalid_type'}}
+2025-11-20 20:45:10,301 [INFO] __main__: Interview started for job_title=engineer
+2025-11-20 20:45:20,141 [INFO] __main__: Interview restarted by user
+2025-11-20 20:52:45,570 [INFO] __main__: User attempting to start interview with job_title=engineer, type=Behavioral, difficulty=Easy
+2025-11-20 20:52:47,891 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-20 20:54:26,138 [INFO] __main__: User attempting to start interview with job_title=engineer, type=Behavioral, difficulty=Easy
+2025-11-20 20:54:28,697 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-20 20:54:31,742 [INFO] __main__: User attempting to start interview with job_title=engineer, type=Behavioral, difficulty=Easy
+2025-11-20 20:54:34,108 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-20 20:54:42,179 [INFO] __main__: User attempting to start interview with job_title=software engineer, type=Behavioral, difficulty=Easy
+2025-11-20 20:54:43,747 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-20 20:54:43,753 [ERROR] modules.utils: Error rendering template 'question_prompts.j2': macro 'generate_question' takes no keyword argument 'previous_answers'
+Traceback (most recent call last):
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 58, in get_prompt
+    return macro(**kwargs)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\runtime.py", line 759, in __call__
+    raise TypeError(
+TypeError: macro 'generate_question' takes no keyword argument 'previous_answers'
+2025-11-20 20:54:44,064 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 400 Bad Request"
+2025-11-20 20:54:44,065 [ERROR] modules.utils: Error in 'openai_call': Error code: 400 - {'error': {'message': "Invalid type for 'input[0].content': expected one of an array of objects or string, but got an object instead.", 'type': 'invalid_request_error', 'param': 'input[0].content', 'code': 'invalid_type'}}
+Traceback (most recent call last):
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 22, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 37, in openai_call
+    response = client.responses.create(
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\openai\resources\responses\responses.py", line 859, in create
+    return self._post(
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid type for 'input[0].content': expected one of an array of objects or string, but got an object instead.", 'type': 'invalid_request_error', 'param': 'input[0].content', 'code': 'invalid_type'}}
+2025-11-20 20:54:44,065 [INFO] __main__: Interview started for job_title=software engineer
+2025-11-20 20:56:58,975 [INFO] __main__: User attempting to start interview with job_title=engineer, type=Behavioral, difficulty=Easy
+2025-11-20 20:57:01,583 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-20 21:02:34,176 [INFO] __main__: User attempting to start interview with job_title=Engineer, type=Behavioral, difficulty=Easy
+2025-11-20 21:02:38,521 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-20 21:02:53,161 [ERROR] modules.utils: Error rendering template 'question_prompts.j2': macro 'generate_question' takes no keyword argument 'previous_answers'
+Traceback (most recent call last):
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 58, in get_prompt
+    return macro(**kwargs)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\runtime.py", line 759, in __call__
+    raise TypeError(
+TypeError: macro 'generate_question' takes no keyword argument 'previous_answers'
+2025-11-20 21:02:53,475 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 400 Bad Request"
+2025-11-20 21:02:53,476 [ERROR] modules.utils: Error in 'openai_call': Error code: 400 - {'error': {'message': "Invalid type for 'input[0].content': expected one of an array of objects or string, but got an object instead.", 'type': 'invalid_request_error', 'param': 'input[0].content', 'code': 'invalid_type'}}
+Traceback (most recent call last):
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 22, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 37, in openai_call
+    response = client.responses.create(
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\openai\resources\responses\responses.py", line 859, in create
+    return self._post(
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid type for 'input[0].content': expected one of an array of objects or string, but got an object instead.", 'type': 'invalid_request_error', 'param': 'input[0].content', 'code': 'invalid_type'}}
+2025-11-20 21:02:53,478 [INFO] __main__: Interview started after clarification for job_title=Civil Engineer
+2025-11-20 21:03:10,984 [INFO] __main__: Interview restarted by user
+2025-11-21 07:50:10,958 [INFO] __main__: User attempting to start interview with job_title=Engineer, type=Role-specific, difficulty=Medium
+2025-11-21 07:50:18,164 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-21 07:50:25,894 [ERROR] modules.utils: Error rendering template 'question_prompts.j2': macro 'generate_question' takes no keyword argument 'previous_answers'
+Traceback (most recent call last):
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 58, in get_prompt
+    return macro(**kwargs)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\runtime.py", line 759, in __call__
+    raise TypeError(
+TypeError: macro 'generate_question' takes no keyword argument 'previous_answers'
+2025-11-21 07:50:27,465 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 400 Bad Request"
+2025-11-21 07:50:27,466 [ERROR] modules.utils: Error in 'openai_call': Error code: 400 - {'error': {'message': "Invalid type for 'input[0].content': expected one of an array of objects or string, but got an object instead.", 'type': 'invalid_request_error', 'param': 'input[0].content', 'code': 'invalid_type'}}
+Traceback (most recent call last):
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 22, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 37, in openai_call
+    response = client.responses.create(
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\openai\resources\responses\responses.py", line 859, in create
+    return self._post(
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid type for 'input[0].content': expected one of an array of objects or string, but got an object instead.", 'type': 'invalid_request_error', 'param': 'input[0].content', 'code': 'invalid_type'}}
+2025-11-21 07:50:27,526 [INFO] __main__: Interview started after clarification for job_title=Engineer
+2025-11-21 07:53:48,700 [INFO] __main__: User attempting to start interview with job_title=Engineer, type=Behavioral, difficulty=Easy
+2025-11-21 07:53:54,247 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-21 07:53:57,545 [ERROR] modules.utils: Error rendering template 'question_prompts.j2': macro 'generate_question' takes no keyword argument 'type'
+Traceback (most recent call last):
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 60, in get_prompt
+    return macro(**kwargs)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\runtime.py", line 759, in __call__
+    raise TypeError(
+TypeError: macro 'generate_question' takes no keyword argument 'type'
+2025-11-21 07:53:58,541 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 400 Bad Request"
+2025-11-21 07:53:58,541 [ERROR] modules.utils: Error in 'openai_call': Error code: 400 - {'error': {'message': "Invalid type for 'input[1].content': expected one of an array of objects or string, but got an object instead.", 'type': 'invalid_request_error', 'param': 'input[1].content', 'code': 'invalid_type'}}
+Traceback (most recent call last):
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 22, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 37, in openai_call
+    response = client.responses.create(
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\openai\resources\responses\responses.py", line 859, in create
+    return self._post(
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid type for 'input[1].content': expected one of an array of objects or string, but got an object instead.", 'type': 'invalid_request_error', 'param': 'input[1].content', 'code': 'invalid_type'}}
+2025-11-21 07:53:58,544 [INFO] __main__: Interview started after clarification for job_title=Engineer
+2025-11-21 08:25:23,388 [INFO] __main__: User attempting to start interview with job_title=Engineer, type=Behavioral, difficulty=Easy
+2025-11-21 08:25:27,478 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-21 08:25:39,363 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-21 08:25:39,364 [INFO] __main__: Interview started after clarification for job_title=software Engineer
+2025-11-21 08:25:49,078 [INFO] __main__: Interview restarted by user
+2025-11-21 08:28:21,310 [INFO] __main__: Starting interview: job=Software Engineer, type=Behavioral, diff=Easy
+2025-11-21 08:28:23,541 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-21 08:28:27,046 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-21 08:28:27,047 [INFO] __main__: Interview started for job_title=Software Engineer
+2025-11-21 08:32:35,069 [INFO] __main__: Starting interview: job=Engineer, type=Behavioral, diff=Easy
+2025-11-21 08:32:38,424 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-21 08:32:43,366 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-21 08:32:43,368 [INFO] __main__: Interview started after clarification: Engineer
+2025-11-21 08:32:51,312 [INFO] __main__: Interview restarted by user
+2025-11-21 09:07:50,597 [INFO] __main__: Starting interview: job=Eingener, type=Behavioral, diff=Easy
+2025-11-21 09:07:54,948 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-21 09:13:14,995 [INFO] __main__: Starting interview: job=Eingener, type=Behavioral, diff=Easy
+2025-11-21 09:13:18,317 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-21 09:15:21,696 [INFO] __main__: Starting interview: job=Eingener, type=Behavioral, diff=Easy
+2025-11-21 09:15:27,080 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-21 09:15:58,168 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-21 09:15:58,170 [INFO] __main__: Interview started after clarification: Engineer
+2025-11-21 09:25:39,637 [INFO] __main__: Starting interview: job=Eingener, type=Behavioral, diff=Easy
+2025-11-21 09:25:44,093 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-21 09:26:06,468 [INFO] __main__: Starting interview: job=Eingener, type=Behavioral, diff=Easy
+2025-11-21 09:26:10,745 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-21 09:26:39,373 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-21 09:26:39,375 [INFO] __main__: Interview started after clarification: Engineer
+2025-11-21 09:26:47,196 [INFO] __main__: User requesting restart with job_title=Engineer
+2025-11-21 09:26:50,243 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-21 09:26:50,245 [INFO] __main__: Job title needs clarification: The job title "Engineer" is valid but it is quite broad. For clarification, could you please specify the field of engineering you're in? For example, are you a Software Engineer, Civil Engineer, Mechanical Engineer, etc? This will help us tailor the interview questions to your specific role.
+2025-11-21 09:26:57,280 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-21 09:28:41,233 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-21 09:28:41,238 [INFO] __main__: Answer for Q0: i needed to build a table quickly, but only had scrap wood and no money. so  i used that and made a table
+2025-11-21 09:28:41,239 [INFO] __main__: Feedback: Your response is brief and lacks detail. It's good that you were able to use available resources to solve a problem, showing resourcefulness. However, it would be beneficial to elaborate on the process you went through to build the table, the challenges you faced, and how you overcame them. Also, it would be helpful to explain how this situation relates to an engineering challenge.
+2025-11-21 09:57:28,549 [INFO] __main__: User requesting restart with job_title=Engineerer
+2025-11-21 09:57:35,091 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-21 09:57:35,092 [INFO] __main__: Job title needs clarification: The job title "Engineerer" is unusual and it seems like there might have been a spelling mistake. Could you please provide clarification? Did you mean "Engineer"? There are various specializations such as "Software Engineer", "Civil Engineer", "Mechanical Engineer", etc. Your clarification will help us to proceed with the interview more accurately.
+2025-11-21 09:58:02,134 [INFO] __main__: User requesting restart with job_title=software engineer
+2025-11-21 09:58:04,597 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-21 09:58:06,668 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-21 09:58:06,671 [INFO] __main__: Interview restarted for job_title=software engineer
+2025-11-21 09:58:17,171 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-21 09:58:17,174 [INFO] __main__: Answer for Q0: i needed to build a table quickly, but only had scrap wood and no money. so  i used that and made a table
+2025-11-21 09:58:17,174 [INFO] __main__: Feedback: Your answer does not address the question asked. The question was about a complex programming problem, but your response discusses a physical construction project. It's important to read the question carefully and ensure your answer is relevant.
+2025-11-21 09:59:23,178 [INFO] __main__: User requesting restart with job_title=software engineer
+2025-11-21 09:59:24,791 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-21 09:59:26,387 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-21 09:59:26,389 [INFO] __main__: Interview restarted for job_title=software engineer
+2025-11-21 11:03:21,958 [INFO] __main__: User requesting restart with job_title=software engineer
+2025-11-21 11:03:24,597 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-21 11:03:27,406 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-21 11:03:27,408 [INFO] __main__: Interview restarted for job_title=software engineer
+2025-11-21 11:23:39,558 [INFO] __main__: Starting interview: job=Eingener, type=Behavioral, diff=Easy
+2025-11-21 11:23:45,481 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-21 11:23:55,275 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-21 11:23:55,277 [INFO] __main__: Interview started after clarification: Eingener
+2025-11-21 11:50:17,933 [INFO] __main__: Starting interview: job=Engineer, type=Behavioral, diff=Easy
+2025-11-21 11:50:21,186 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-21 11:52:20,619 [INFO] __main__: Starting interview: job=Eingener, type=Behavioral, diff=Medium
+2025-11-21 11:52:20,620 [INFO] __main__: Interview started for job_title=Eingener
+2025-11-21 11:52:33,269 [INFO] __main__: User requesting restart with job_title=Wizard of Light
+2025-11-21 11:52:33,269 [INFO] __main__: Job title needs clarification: Mock Clarification: This job title seems unusual. Please confirm.
+2025-11-21 11:52:45,405 [INFO] __main__: Answer for Q1: Tom
+
+2025-11-21 11:52:45,405 [INFO] __main__: Feedback: Mock Feedback: Nice! Consider elaborating on impact.
+2025-11-21 11:56:57,376 [INFO] __main__: Answer for Q2: as
+2025-11-21 11:56:57,377 [INFO] __main__: Feedback: Mock Feedback: Good answer! Try to be more concise.
+2025-11-21 12:01:40,721 [INFO] __main__: Starting interview: job=Wizard of Light, type=Behavioral, diff=Easy
+2025-11-21 12:01:44,991 [INFO] __main__: Interview started after clarification: Wizard of Light
+2025-11-21 12:01:48,008 [INFO] __main__: Answer for Q1: asd
+2025-11-21 12:01:48,008 [INFO] __main__: Feedback: Mock Feedback: Nice! Consider elaborating on impact.
+2025-11-21 12:01:53,873 [INFO] __main__: Answer for Q2: dasdasd
+2025-11-21 12:01:53,873 [INFO] __main__: Feedback: Mock Feedback: Nice! Consider elaborating on impact.
+2025-11-21 12:01:56,348 [INFO] __main__: Answer for Q3: asdasd
+2025-11-21 12:01:56,349 [INFO] __main__: Feedback: Mock Feedback: Nice! Consider elaborating on impact.
+2025-11-21 12:01:59,212 [INFO] __main__: Answer for Q4: asdasd
+2025-11-21 12:01:59,213 [INFO] __main__: Feedback: Mock Feedback: Nice! Consider elaborating on impact.
+2025-11-21 12:02:02,138 [INFO] __main__: Answer for Q5: asdasdasd
+2025-11-21 12:02:02,138 [INFO] __main__: Feedback: Mock Feedback: Nice! Consider elaborating on impact.
+2025-11-21 12:13:41,075 [INFO] __main__: Starting interview: job=Engineer, type=Behavioral, diff=Easy
+2025-11-21 12:13:41,076 [INFO] __main__: Interview started for job_title=Engineer
+2025-11-21 12:14:15,322 [INFO] __main__: Starting interview: job=Eingener, type=Behavioral, diff=Easy
+2025-11-21 12:14:15,323 [INFO] __main__: Interview started for job_title=Eingener
+2025-11-21 12:40:03,341 [INFO] __main__: Starting interview: job=Eingener, type=Behavioral, diff=Easy
+2025-11-21 12:40:03,342 [INFO] __main__: Interview started for job_title=Eingener
+2025-11-21 12:49:12,981 [INFO] __main__: Starting interview: job=Eingener, type=Behavioral, diff=Easy
+2025-11-21 12:49:12,983 [INFO] __main__: Interview started for job_title=Eingener
+2025-11-21 12:51:02,403 [INFO] __main__: Starting interview: job=asdasd, type=Behavioral, diff=Easy
+2025-11-21 12:51:02,403 [INFO] __main__: Interview started for job_title=asdasd
+2025-11-21 12:51:04,377 [INFO] __main__: Answer for Q1: asdasd
+2025-11-21 12:51:04,378 [INFO] __main__: Feedback: Mock Feedback: Nice! Consider elaborating on impact.
+2025-11-21 12:51:07,694 [INFO] __main__: Answer for Q2: asfasv
+2025-11-21 12:51:07,694 [INFO] __main__: Feedback: Mock Feedback: Good answer! Try to be more concise.
+2025-11-21 12:56:13,228 [INFO] __main__: Answer for Q3: asdfasf
+
+2025-11-21 12:56:13,228 [INFO] __main__: Feedback: Mock Feedback: Solid response. Could give more examples.
+2025-11-21 12:56:14,734 [INFO] __main__: Answer for Q4: asfasf
+2025-11-21 12:56:14,735 [INFO] __main__: Feedback: Mock Feedback: Excellent! Well-structured answer.
+2025-11-21 12:56:16,261 [INFO] __main__: Answer for Q5: asfasf
+2025-11-21 12:56:16,261 [INFO] __main__: Feedback: Mock Feedback: Nice! Consider elaborating on impact.
+2025-11-21 12:56:17,879 [INFO] __main__: Answer for Q6: asfasf
+2025-11-21 12:56:17,879 [INFO] __main__: Feedback: Mock Feedback: Good answer! Try to be more concise.
+2025-11-21 12:56:19,601 [INFO] __main__: Answer for Q7: asfasfasf
+2025-11-21 12:56:19,601 [INFO] __main__: Feedback: Mock Feedback: Solid response. Could give more examples.
+2025-11-21 12:56:22,247 [INFO] __main__: Answer for Q8: asfasfasf
+2025-11-21 12:56:22,247 [INFO] __main__: Feedback: Mock Feedback: Excellent! Well-structured answer.
+2025-11-21 12:56:24,341 [INFO] __main__: Answer for Q9: asfasfas
+2025-11-21 12:56:24,341 [INFO] __main__: Feedback: Mock Feedback: Nice! Consider elaborating on impact.
+2025-11-24 07:47:44,413 [INFO] __main__: Starting interview: job=Eingener, type=Behavioral, diff=Easy
+2025-11-24 07:47:44,415 [INFO] __main__: Interview started for job_title=Eingener
+2025-11-24 07:47:48,801 [INFO] __main__: Answer for Q1: asdasd
+2025-11-24 07:47:48,801 [INFO] __main__: Feedback: Mock Feedback: Nice! Consider elaborating on impact.
+2025-11-24 07:47:55,059 [INFO] __main__: Answer for Q2: asd
+2025-11-24 07:47:55,059 [INFO] __main__: Feedback: Mock Feedback: Good answer! Try to be more concise.
+2025-11-24 07:47:56,353 [INFO] __main__: Answer for Q3: asdsad
+2025-11-24 07:47:56,353 [INFO] __main__: Feedback: Mock Feedback: Solid response. Could give more examples.
+2025-11-24 07:47:57,862 [INFO] __main__: Answer for Q4: asdsad
+2025-11-24 07:47:57,863 [INFO] __main__: Feedback: Mock Feedback: Excellent! Well-structured answer.
+2025-11-24 07:47:59,324 [INFO] __main__: Answer for Q5: asdasd
+2025-11-24 07:47:59,325 [INFO] __main__: Feedback: Mock Feedback: Nice! Consider elaborating on impact.
+2025-11-24 07:48:00,728 [INFO] __main__: Answer for Q6: asdsad
+2025-11-24 07:48:00,729 [INFO] __main__: Feedback: Mock Feedback: Good answer! Try to be more concise.
+2025-11-24 07:48:02,349 [INFO] __main__: Answer for Q7: asdsad
+2025-11-24 07:48:02,349 [INFO] __main__: Feedback: Mock Feedback: Solid response. Could give more examples.
+2025-11-24 07:48:04,938 [INFO] __main__: Answer for Q8: asdasd
+2025-11-24 07:48:04,938 [INFO] __main__: Feedback: Mock Feedback: Excellent! Well-structured answer.
+2025-11-24 08:09:12,588 [INFO] __main__: Starting interview: job=Wizard of Light, type=Behavioral, diff=Hard
+2025-11-24 08:09:14,206 [INFO] __main__: Interview started after clarification: Wizard of Light
+2025-11-24 08:18:50,779 [INFO] modules.ui_main_screen: Interview started for job_title=Eingener
+2025-11-24 08:18:59,849 [INFO] __main__: User requesting restart with job_title=Eingener
+2025-11-24 08:18:59,850 [INFO] __main__: Interview restarted for job_title=Eingener
+2025-11-24 08:47:24,555 [INFO] modules.ui_main_screen: Interview started for job_title=asdasd
+2025-11-24 08:47:33,060 [INFO] __main__: User requesting restart with job_title=Wizard of Light
+2025-11-24 08:47:33,061 [INFO] __main__: Job title needs clarification: Mock Clarification: This job title seems unusual. Please confirm.
+2025-11-24 08:47:59,292 [INFO] modules.ui_main_screen: Interview started after clarification: Wizard of Lightas
+2025-11-24 08:48:03,375 [INFO] __main__: User requesting restart with job_title=Wizard of Light
+2025-11-24 08:48:03,376 [INFO] __main__: Job title needs clarification: Mock Clarification: This job title seems unusual. Please confirm.
+2025-11-24 09:05:50,007 [INFO] modules.ui_start_screen: Interview started after clarification: Wizard of Light
+2025-11-24 09:05:58,549 [INFO] modules.ui_sidebar: User requesting restart with job_title=Wizard of Light
+2025-11-24 09:05:58,550 [INFO] modules.ui_sidebar: Job title needs clarification: Mock Clarification: This job title seems unusual. Please confirm.
+2025-11-24 09:06:04,836 [INFO] modules.ui_sidebar: User requesting restart with job_title=Wizard of Light
+2025-11-24 09:06:04,836 [INFO] modules.ui_sidebar: Job title needs clarification: Mock Clarification: This job title seems unusual. Please confirm.
+2025-11-24 09:17:00,242 [INFO] modules.ui_start_screen: Interview started after clarification: Wizard of Light
+2025-11-24 09:17:02,215 [INFO] modules.ui_interview: Answer for Q1: asdasd
+2025-11-24 09:17:02,215 [INFO] modules.ui_interview: Feedback: Mock Feedback: Nice! Consider elaborating on impact.
+2025-11-24 09:17:03,907 [INFO] modules.ui_interview: Answer for Q2: asdasd
+2025-11-24 09:17:03,907 [INFO] modules.ui_interview: Feedback: Mock Feedback: Good answer! Try to be more concise.
+2025-11-24 09:17:07,621 [INFO] modules.ui_interview: Answer for Q3: asdasd
+2025-11-24 09:17:07,621 [INFO] modules.ui_interview: Feedback: Mock Feedback: Solid response. Could give more examples.
+2025-11-24 09:17:15,725 [INFO] modules.ui_sidebar: User requesting restart with job_title=asdasdasd
+2025-11-24 09:17:15,726 [INFO] modules.ui_sidebar: Interview restarted for job_title=asdasdasd
+2025-11-24 09:26:22,151 [INFO] modules.ui.ui_start_screen: Interview started for job_title=Eingener
+2025-11-24 10:04:32,950 [INFO] modules.ui.ui_sidebar: User requesting restart with job_title=asdasd
+2025-11-24 10:04:32,951 [INFO] modules.ui.ui_sidebar: Interview restarted for job_title=asdasd
+2025-11-24 10:04:53,471 [INFO] modules.ui.ui_start_screen: Interview started after clarification: Wizard of Light
+2025-11-24 10:13:04,215 [INFO] modules.ui.ui_start_screen: Interview started after clarification: Wizard of Light
+2025-11-24 10:13:12,290 [INFO] modules.ui.ui_interview: Answer for Q1: asdads
+2025-11-24 10:13:12,290 [INFO] modules.ui.ui_interview: Feedback: Mock Feedback: Nice! Consider elaborating on impact.
+2025-11-24 10:13:14,530 [INFO] modules.ui.ui_interview: Answer for Q2: asdasd
+2025-11-24 10:13:14,530 [INFO] modules.ui.ui_interview: Feedback: Mock Feedback: Good answer! Try to be more concise.
+2025-11-24 10:13:18,719 [INFO] modules.ui.ui_sidebar: User requesting restart with job_title=Wizard of Light
+2025-11-24 10:13:18,719 [INFO] modules.ui.ui_sidebar: Job title needs clarification: Mock Clarification: This job title seems unusual. Please confirm.
+2025-11-24 10:13:31,092 [INFO] modules.ui.ui_sidebar: User requesting restart with job_title=Wizard of Light
+2025-11-24 10:13:31,092 [INFO] modules.ui.ui_sidebar: Job title needs clarification: Mock Clarification: This job title seems unusual. Please confirm.
+2025-11-24 10:14:33,847 [INFO] modules.ui.ui_start_screen: Interview started for job_title=asd
+2025-11-24 10:14:41,053 [INFO] modules.ui.ui_sidebar: User requesting restart with job_title=Eingener
+2025-11-24 10:15:14,580 [INFO] modules.ui.ui_start_screen: Interview started for job_title=asdasd
+2025-11-24 10:17:39,463 [INFO] modules.ui.ui_start_screen: Interview started for job_title=Eingener
+2025-11-24 10:22:36,052 [INFO] modules.ui.ui_start_screen: Interview started after clarification: Wizard of Light
+2025-11-24 10:22:43,032 [INFO] modules.ui.ui_sidebar: User requesting restart with job_title=asdasd
+2025-11-24 10:26:22,199 [INFO] modules.ui.ui_start_screen: Interview started for job_title=asdasdasdasdasd
+2025-11-24 10:26:24,218 [INFO] modules.ui.ui_interview: Answer for Q1: asdasd
+2025-11-24 10:26:24,218 [INFO] modules.ui.ui_interview: Feedback: Mock Feedback: Nice! Consider elaborating on impact.
+2025-11-24 10:26:51,117 [INFO] modules.ui.ui_sidebar: User requesting restart with job_title=Wizard of Lightas
+2025-11-24 10:26:57,379 [INFO] modules.ui.ui_sidebar: User requesting restart with job_title=Wizard of Light
+2025-11-24 10:26:57,380 [INFO] modules.ui.ui_sidebar: Job title needs clarification: Mock Clarification: This job title seems unusual. Please confirm.
+2025-11-24 10:31:48,358 [INFO] modules.ui.ui_start_screen: Interview started after clarification: Wizard of Light
+2025-11-24 10:34:17,045 [INFO] modules.ui.ui_interview: Answer for Q5: asfasf
+2025-11-24 10:34:17,045 [INFO] modules.ui.ui_interview: Feedback: Mock Feedback: Nice! Consider elaborating on impact.
+2025-11-24 10:34:19,703 [INFO] modules.ui.ui_interview: Answer for Q6: asfasfas
+2025-11-24 10:34:19,703 [INFO] modules.ui.ui_interview: Feedback: Mock Feedback: Good answer! Try to be more concise.
+2025-11-24 10:34:24,095 [INFO] modules.ui.ui_interview: Answer for Q7: asfasfa
+2025-11-24 10:34:24,095 [INFO] modules.ui.ui_interview: Feedback: Mock Feedback: Solid response. Could give more examples.
+2025-11-24 10:34:26,256 [INFO] modules.ui.ui_interview: Answer for Q8: asfasfas
+2025-11-24 10:34:26,257 [INFO] modules.ui.ui_interview: Feedback: Mock Feedback: Excellent! Well-structured answer.
+2025-11-24 10:34:28,885 [INFO] modules.ui.ui_interview: Answer for Q9: asfasfas
+2025-11-24 10:34:28,885 [INFO] modules.ui.ui_interview: Feedback: Mock Feedback: Nice! Consider elaborating on impact.
+2025-11-24 10:34:32,196 [INFO] modules.ui.ui_interview: Answer for Q10: asfasfas
+2025-11-24 10:34:32,197 [INFO] modules.ui.ui_interview: Feedback: Mock Feedback: Good answer! Try to be more concise.
+2025-11-24 10:34:37,807 [INFO] modules.ui.ui_interview: Answer for Q11: asfasfasf
+2025-11-24 10:34:37,807 [INFO] modules.ui.ui_interview: Feedback: Mock Feedback: Solid response. Could give more examples.
+2025-11-24 10:34:43,067 [INFO] modules.ui.ui_interview: Answer for Q12: asfasfasfas
+2025-11-24 10:34:43,068 [INFO] modules.ui.ui_interview: Feedback: Mock Feedback: Excellent! Well-structured answer.
+2025-11-24 10:34:45,030 [INFO] modules.ui.ui_interview: Answer for Q13: asfasfasf
+2025-11-24 10:34:45,030 [INFO] modules.ui.ui_interview: Feedback: Mock Feedback: Nice! Consider elaborating on impact.
+2025-11-24 10:37:11,458 [INFO] modules.ui.ui_interview: Answer for Q14: asdasdas
+2025-11-24 10:37:11,458 [INFO] modules.ui.ui_interview: Feedback: Mock Feedback: Good answer! Try to be more concise.
+2025-11-24 10:37:13,145 [INFO] modules.ui.ui_interview: Answer for Q15: asdasdas
+2025-11-24 10:37:13,145 [INFO] modules.ui.ui_interview: Feedback: Mock Feedback: Solid response. Could give more examples.
+2025-11-24 10:37:15,881 [INFO] modules.ui.ui_interview: Answer for Q16: sadasd
+2025-11-24 10:37:15,881 [INFO] modules.ui.ui_interview: Feedback: Mock Feedback: Excellent! Well-structured answer.
+2025-11-24 10:37:37,615 [INFO] modules.ui.ui_start_screen: Interview started for job_title=asdasd
+2025-11-24 10:37:39,425 [INFO] modules.ui.ui_interview: Answer for Q1: asdasd
+2025-11-24 10:37:39,426 [INFO] modules.ui.ui_interview: Feedback: Mock Feedback: Nice! Consider elaborating on impact.
+2025-11-24 10:37:40,726 [INFO] modules.ui.ui_interview: Answer for Q2: asdasd
+2025-11-24 10:37:40,726 [INFO] modules.ui.ui_interview: Feedback: Mock Feedback: Good answer! Try to be more concise.
+2025-11-24 10:37:41,880 [INFO] modules.ui.ui_interview: Answer for Q3: a
+2025-11-24 10:37:41,880 [INFO] modules.ui.ui_interview: Feedback: Mock Feedback: Solid response. Could give more examples.
+2025-11-24 10:37:43,111 [INFO] modules.ui.ui_interview: Answer for Q4: a
+2025-11-24 10:37:43,111 [INFO] modules.ui.ui_interview: Feedback: Mock Feedback: Excellent! Well-structured answer.
+2025-11-24 10:37:44,154 [INFO] modules.ui.ui_interview: Answer for Q5: a
+2025-11-24 10:37:44,155 [INFO] modules.ui.ui_interview: Feedback: Mock Feedback: Nice! Consider elaborating on impact.
+2025-11-24 10:37:46,486 [INFO] modules.ui.ui_interview: Answer for Q6: a
+2025-11-24 10:37:46,486 [INFO] modules.ui.ui_interview: Feedback: Mock Feedback: Good answer! Try to be more concise.
+2025-11-24 10:37:51,218 [INFO] modules.ui.ui_interview: Answer for Q7: a
+2025-11-24 10:37:51,219 [INFO] modules.ui.ui_interview: Feedback: Mock Feedback: Solid response. Could give more examples.
