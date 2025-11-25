@@ -1,0 +1,11 @@
+The user answered the following questions:
+
+{% for q, a in questions_and_answers %}
+Q: {{ q }}
+A: {{ a }}
+{% endfor %}
+
+Generate a JSON-formatted summary with:
+- "summary": a concise paragraph highlighting key strengths and weaknesses
+- "recommendations": a list of actionable suggestions for improvement
+- Ensure the output matches exactly the JSON structure specified in the system prompt

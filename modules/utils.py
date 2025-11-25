@@ -2,12 +2,12 @@ import os
 import logging
 from jinja2 import Environment, FileSystemLoader
 from openai import OpenAI
-from typing import Any
 from dotenv import load_dotenv
+from functools import lru_cache
 from .config import PROMPTS_TEMPLATE_DIR
-
 # --- setup logging ---
 logger = logging.getLogger(__name__)
+
 # No basicConfig here; configure it once in main.py/app.py
 
 # --- decorator ---
@@ -27,13 +27,12 @@ def handle_errors(default=None):
     return decorator
 
 @handle_errors(default=None)
-def openai_call(instructions: str, user_input: str, temperature: float = 0.2) -> str:
+def openai_call(sys_instructions: str, prompt_text: str, temperature: float = 0.2) -> str:
     """
     Makes an API call to OpenAI using the Responses API.
     
     Args:
-        instructions: System instructions for the model
-        user_input: The user's prompt/input text (must be a string)
+        prompt_text: The full merged prompt including instructions and all content.
         temperature: Sampling temperature (default 0.2)
     
     Returns:
@@ -44,9 +43,9 @@ def openai_call(instructions: str, user_input: str, temperature: float = 0.2) ->
 
     response = client.responses.create(
         model="gpt-4",
-        instructions=instructions,
-        input=user_input,  
-        max_output_tokens=150,
+        instructions=sys_instructions,
+        input=prompt_text,  
+        max_output_tokens=250,
         temperature=temperature,
     )
 
@@ -54,17 +53,28 @@ def openai_call(instructions: str, user_input: str, temperature: float = 0.2) ->
 
 # --- Jinja2 environment ---
 env = Environment(loader=FileSystemLoader(PROMPTS_TEMPLATE_DIR))
+   
 
-def get_prompt(template_name: str, **kwargs: Any) -> str:
+@lru_cache(maxsize=128)
+def load_prompt(template_name: str, kwargs_tuple: tuple = ()) -> str:
     """
-    Load a Jinja2 template by name and render it with variables.
+    Load a Jinja2 template and render it with kwargs.
+    Cached to avoid repeated rendering in Streamlit reruns.
+    
+    kwargs_tuple: tuple of (key, value) pairs, e.g. tuple(sorted(kwargs.items()))
     """
-    try:
-        template = env.get_template(template_name)
-        if hasattr(template.module, kwargs.get("macro_name", "")):
-            macro = getattr(template.module, kwargs.pop("macro_name"))
-            return macro(**kwargs)
-        return template.render(**kwargs)
-    except Exception as e:
-        logger.error(f"Error rendering template '{template_name}': {e}", exc_info=True)
-        return ""
+    template = env.get_template(template_name)
+    kwargs = dict(kwargs_tuple)
+    return template.render(**kwargs)
+
+def load_prompt_cached(template_name: str, **kwargs):
+    return load_prompt(template_name, kwargs_tuple=tuple(sorted(kwargs.items())))
+
+def build_prompt(category: str, technique: str, **kwargs) -> str:
+    """
+    Combine base instructions + selected technique prompt + Jinja variables.
+    """
+    base = load_prompt_cached(f"{category}/base_instructions.j2", **kwargs)
+    technique = load_prompt_cached(f"{category}/technique_{technique}.j2", **kwargs)
+
+    return base + "\n" + technique
