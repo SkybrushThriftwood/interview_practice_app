@@ -1,0 +1,10 @@
+Job Title: {{ job_title }}
+Question Type: {{ question_type }}
+Difficulty: {{ difficulty }}
+Previous Answers: {{ previous_answers }}
+
+{% raw %}
+# Chain of Thought (Hidden Reasoning)
+Think through the job role and the user’s previous answers internally. Choose a question that logically increases depth while fitting the difficulty and question type.
+DO NOT reveal your reasoning. Output ONLY the final question.
+{% endraw %}

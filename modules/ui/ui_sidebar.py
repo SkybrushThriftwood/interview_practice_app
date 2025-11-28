@@ -144,7 +144,6 @@ def handle_sidebar_restart():
             st.session_state.question_type,
             st.session_state.difficulty
         )
-        st.session_state.questions.append(generate_next_question())
         st.rerun()
     else:
         st.session_state.sidebar_needs_clarification = True

@@ -1,9 +1,10 @@
 import streamlit as st
+from modules.config import USE_MOCK_API, ACTIVE_VALIDATION_TECHNIQUE, SYSTEM_PROMPTS, BASE_PROMPTS
+from typing import Tuple, Optional
+from modules.utils import load_prompt, openai_call, build_prompt
 import logging
-from typing import Tuple
-from .utils import build_prompt, openai_call, load_prompt
-from modules.config import USE_MOCK_API
 
+logger = logging.getLogger(__name__)
 
 # --- MOCK API MODE ---
 MOCK_CLARIFICATION_JOB_TITLES = ["Wizard of Light", "Dragon Tamer"]  # Example titles that need clarification
@@ -31,17 +32,11 @@ def validate_job_title_exists(job_title: str | None) -> bool:
     st.session_state.job_error = ""
     return True
 
-def validate_job_title_with_clarification(job_title: str) -> Tuple[bool, str | None]:
+
+
+def validate_job_title_with_clarification(job_title: str) -> Tuple[bool, Optional[str]]:
     """
     Validates a job title using the LLM with a fail-safe prompt.
-    
-    Args:
-        job_title (str): The job title entered by the user.
-    
-    Returns:
-        Tuple[bool, Optional[str]]:
-            - True, None if the title is valid.
-            - False, message if clarification is needed.
     """
     # --- MOCK API for testing ---
     if USE_MOCK_API:
@@ -50,28 +45,29 @@ def validate_job_title_with_clarification(job_title: str) -> Tuple[bool, str | N
         return True, None
 
     # --- Load system instructions ---
-    sys_instructions = load_prompt("system/job_title_validator.j2")
+    sys_instructions = load_prompt(SYSTEM_PROMPTS["job_title_validator"])
 
-    # --- Build developer/user prompt dynamically ---
-    prompt_text = build_prompt(
+    # --- Build full prompt using base + technique ---
+    prompt_body = build_prompt(
         category="validation",
-        technique="default",  # Could be extended to different techniques later
+        base_instructions=BASE_PROMPTS["validation"],
+        technique=ACTIVE_VALIDATION_TECHNIQUE,
         job_title=job_title
     )
 
-    if not prompt_text:
-        logger.error("Failed to build validation prompt")
-        return False, "Could not generate validation prompt."
+    final_prompt = f"MODE: validate_job_title\n\n{prompt_body}".strip()
 
     # --- Call OpenAI API ---
     result = openai_call(
         sys_instructions=sys_instructions,
-        prompt_text=prompt_text,
-        temperature=0.7
+        prompt_text=final_prompt,
     )
 
+    if not result:
+        return False, "Validation failed. Please try again."
+
     # --- Determine if clarification is needed ---
-    if result and "clarification" in result.lower():
+    if "clarification needed" in result.lower():
         return False, result.strip()
 
     return True, None

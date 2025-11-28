@@ -1,6 +1,6 @@
 import streamlit as st
 from modules.validation import validate_job_title_with_clarification, validate_job_title_exists
-from modules.interview_logic import initialize_interview_session, generate_next_question
+from modules.interview_logic import initialize_interview_session
 import logging
 
 logger = logging.getLogger(__name__)
@@ -45,8 +45,6 @@ def _render_normal_start_ui():
             st.session_state.difficulty = difficulty
 
             initialize_interview_session(job_title, question_type, difficulty)
-            st.session_state.started = True
-            st.session_state.questions.append(generate_next_question())
             logger.info(f"Interview started for job_title={job_title}")
             st.rerun()
         else:
@@ -84,8 +82,6 @@ def _render_clarification_ui():
                 st.session_state.job_title,
                 st.session_state.question_type,
                 st.session_state.difficulty,
-            )
-            st.session_state.started = True
-            st.session_state.questions.append(generate_next_question())
+            )      
             logger.info(f"Interview started after clarification: {st.session_state.job_title}")
             st.rerun()

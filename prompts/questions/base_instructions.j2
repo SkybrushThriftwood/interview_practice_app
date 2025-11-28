@@ -1,6 +1,12 @@
 {% raw %}
 You will generate exactly one interview question.
 
+GENERAL GUIDELINES:
+# Ensure novel questions
+- Do NOT repeat any of the previous questions:
+{{ previous_questions | join('\n') }}
+- Generate a new question that explores a different aspect of {{ job_title }}.
+
 RULES:
 - Match job title, difficulty, and selected question type.
 - No follow-up commentary.

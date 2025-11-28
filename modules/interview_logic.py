@@ -1,7 +1,14 @@
 import streamlit as st
 import json
 from modules.utils import openai_call, load_prompt, handle_errors, build_prompt
-from modules.config import USE_MOCK_API, ACTIVE_QUESTION_TECHNIQUE
+from modules.config import (
+    USE_MOCK_API, 
+    ACTIVE_QUESTION_TECHNIQUE, 
+    ACTIVE_SUMMARY_TECHNIQUE,
+    SYSTEM_PROMPTS, 
+    BASE_PROMPTS, 
+    PERSONA_MAP
+)
 from typing import Tuple, Optional
 import logging
 logger = logging.getLogger(__name__)
@@ -20,11 +27,6 @@ mock_feedback = [
     "Mock Feedback: Excellent! Well-structured answer.",
     "Mock Feedback: Nice! Consider elaborating on impact."
 ]
-
-def start_interview():
-    """Starts the interview by setting session state to 'started'."""
-    st.session_state.started = True
-    st.session_state.job_error = ""  # Reset error
 
 def restart_interview():
     """
@@ -60,109 +62,140 @@ def initialize_interview_session(job_title: str, question_type: str, difficulty:
     st.session_state.answers = []              # User answers
     st.session_state.current_question_index = 0  # Tracks which question is being displayed
 
-@handle_errors(default=None)
+def evaluate_answer_and_generate_next(user_answer: str) -> Tuple[str, Optional[str]]:
+    """
+    Evaluates the user's answer and optionally generates the next question.
+    Ensures feedback and next_question are always present.
+    """
+    if USE_MOCK_API:
+        return "Mock feedback: good answer.", "Mock next question."
+
+    index = st.session_state.current_question_index
+    sys_instructions = load_prompt(SYSTEM_PROMPTS["answer_evaluator"])
+    selected_persona = st.session_state.evaluation_style
+    persona_template = PERSONA_MAP.get(selected_persona, "default.j2")
+
+    prompt_text = build_prompt(
+        category="evaluation",
+        base_instructions=BASE_PROMPTS["evaluation"],
+        technique=persona_template,
+        job_title=st.session_state.job_title,
+        question=st.session_state.questions[index],
+        answer=user_answer,
+        previous_answers=st.session_state.answers[:index+1],
+        previous_questions=st.session_state.questions,  
+        difficulty=st.session_state.difficulty,         
+        question_type=st.session_state.question_type,
+    )
+
+    # Structured JSON schema for response
+    response_format = {
+        "format": {
+            "type": "json_schema",
+            "name": "evaluation_result",
+            "strict": True,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "feedback": {"type": "string"},
+                    "next_question": {"type": ["string", "null"]}
+                },
+                "required": ["feedback", "next_question"],
+                "additionalProperties": False
+            }
+        }
+    }
+
+    raw_response = openai_call(
+        sys_instructions=sys_instructions,
+        prompt_text=prompt_text,
+        temperature=0.4,
+        structured_output=response_format
+    )
+
+    # Always ensure keys exist
+    try:
+        data = json.loads(raw_response)
+        feedback = data.get("feedback", "No feedback returned.")
+        next_question = data.get("next_question") or None
+    except Exception as e:
+        logger.error(f"Failed to parse evaluation JSON: {e}")
+        feedback = "Error parsing model response."
+        next_question = None
+
+    # If model didn’t propose a next question, optionally generate one:
+    if not next_question:
+        next_question = generate_next_question()
+
+    return feedback, next_question
+
+@handle_errors(default="Could not generate question. Please try again.")
 def generate_next_question() -> str:
     """
     Generates the next interview question using the selected prompt technique.
+    Uses structured JSON output for more reliable parsing.
     """
-    # Mock mode (unchanged)
+    # --- MOCK MODE ---
     if USE_MOCK_API:
         index = len(st.session_state.questions)
         return mock_questions[index % len(mock_questions)]
 
-    # Load system instructions (static)
-    sys_instructions = load_prompt("system/question_generator.j2")
+    # --- Load system instructions ---
+    sys_instructions = load_prompt(SYSTEM_PROMPTS["question_generator"])
 
-
-   # Build the full prompt (instructions + technique content)
+    # --- Build full prompt ---
     prompt_content = build_prompt(
-        category="question",
+        category="questions",
+        base_instructions=BASE_PROMPTS["question"],
         technique=ACTIVE_QUESTION_TECHNIQUE,
         job_title=st.session_state.job_title,
         question_type=st.session_state.question_type,
         difficulty=st.session_state.difficulty,
         previous_answers=st.session_state.answers,
+        previous_questions=st.session_state.questions,           
     )
-
-    # Merge mode and content into a single string
     prompt_text = f"MODE: generate_question\n{prompt_content}"
 
     if not prompt_text:
         logger.error("Failed to build question prompt")
         return "Could not generate question. Please try again."
 
-    # Call the model with separated system instructions + developer/user prompt
-    question_text = openai_call(sys_instructions=sys_instructions,
-        prompt_text=prompt_text)
-
-    return question_text
-
-def evaluate_answer_and_generate_next(user_answer: str) -> Tuple[str, Optional[str]]:
-    """
-    Evaluates the user's answer and generates the next question using the OpenAI API.
-
-    Args:
-        user_answer (str): The answer provided by the user to the current question.
-
-    Returns:
-        Tuple[str, str]: feedback and next question
-    """
-    # Mock API for testing
-    if USE_MOCK_API:
-        index = len(st.session_state.answers)
-        feedback = mock_feedback[index % len(mock_feedback)]
-        next_question = generate_next_question()
-        return feedback, next_question
-
-    # Append the user answer to session state
-    st.session_state.answers.append(user_answer)
-    index = st.session_state.current_question_index
-
-    if "feedback_cache" not in st.session_state:
-        st.session_state.feedback_cache = {}
-
-    if index not in st.session_state.feedback_cache:
-        st.session_state.feedback_cache[index] = {}
-
-    selected_persona = st.session_state["evaluation_style"]
-
-    # Check cache first
-    if selected_persona in st.session_state.feedback_cache[index]:
-        feedback = st.session_state.feedback_cache[index][selected_persona]
-    else:
-    # Build prompt (base + persona technique)
-        persona_map = {
-            "Hiring Manager": "personality_hiring_manager.j2",
-            "HR Professional": "personality_hr.j2",
-            "Ideal Candidate": "personality_ideal_candidate.j2",
-            "Mentor": "personality_mentor.j2",
-            "Subject Matter Expert": "personality_sme.j2",
+    # --- Structured output for consistent parsing ---
+    structured_output = {
+        "format": {
+            "type": "json_schema",
+            "name": "question_result",
+            "strict": True,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "question": {"type": "string", "minLength": 1}
+                },
+                "required": ["question"],
+                "additionalProperties": False
+            }
         }
+    }
 
-        prompt_text = build_prompt(
-            category="evaluation",
-            technique=persona_map[selected_persona],
-            job_title=st.session_state.job_title,
-            question=st.session_state.questions[index],
-            answer=user_answer,
-            previous_answers=st.session_state.answers[:index+1]
-        )
+    # --- Call the model ---
+    response = openai_call(
+        sys_instructions=sys_instructions,
+        prompt_text=prompt_text,
+        temperature=0.2,
+        structured_output=structured_output
+    )
 
-        sys_instructions = load_prompt("system/answer_evaluator.j2")
+    # --- Parse JSON safely ---
+    if response:
+        try:
+            data = json.loads(response)
+            return data.get("question", "Could not generate question. Please try again.")
+        except Exception as e:
+            logger.error(f"Failed to parse question JSON: {e}")
+            # fallback to raw response
+            return response
 
-        feedback, _ = parse_feedback_and_next(
-            openai_call(sys_instructions=sys_instructions, prompt_text=prompt_text)
-        )
-
-        # Cache the result
-        st.session_state.feedback_cache[index][selected_persona] = feedback
-
-    # Generate next question only if it's the last submitted answer
-    next_question = None
-    if index == len(st.session_state.questions) - 1:
-        next_question = generate_next_question()
-
-    return feedback, next_question
+    return "Could not generate question. Please try again."
 
 def parse_feedback_and_next(result_text: str) -> tuple[str, str]:
     """
@@ -194,7 +227,7 @@ def generate_interview_summary() -> str:
         return "Mock summary: User performed well overall, needs improvement in problem-solving."
 
     # --- Load system instructions ---
-    sys_instructions = load_prompt("system/summary_generator.j2")
+    sys_instructions = load_prompt(SYSTEM_PROMPTS["summary_generator"])
 
     # --- Build developer/user prompt dynamically ---
     questions_and_answers = list(zip(
@@ -205,7 +238,8 @@ def generate_interview_summary() -> str:
     # Render prompt using base + technique
     prompt_text = build_prompt(
         category="summary",
-        technique="default",
+        base_instructions=BASE_PROMPTS["summary"],
+        technique=ACTIVE_SUMMARY_TECHNIQUE,
         questions_and_answers=questions_and_answers
     )
 

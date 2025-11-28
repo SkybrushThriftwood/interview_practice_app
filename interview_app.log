@@ -681,3 +681,447 @@ openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid type fo
 2025-11-25 15:20:28,611 [INFO] modules.ui.ui_start_screen: Interview started after clarification: Wizard of Light
 2025-11-25 15:21:07,848 [INFO] modules.ui.ui_interview: Answer for Q1: asdasdasd
 2025-11-25 15:21:07,849 [INFO] modules.ui.ui_interview: Feedback: Mock Feedback: Good answer! Try to be more concise.
+2025-11-26 09:21:13,547 [INFO] modules.ui.ui_start_screen: Interview started after clarification: Wizard of Light
+2025-11-26 10:03:18,770 [ERROR] modules.validation: Failed to load base instructions for job title validation.
+2025-11-26 10:21:17,244 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-26 10:21:33,277 [ERROR] modules.utils: Error in 'generate_next_question': 'system/question_generator.j2' not found in search path: 'C:\\Users\\thoma\\Desktop\\SAE\\knowledge-by-module\\modules\\M2_Sprint1\\interview_practice_app\\prompts'
+Traceback (most recent call last):
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 22, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\interview_logic.py", line 74, in generate_next_question
+    sys_instructions = load_prompt("system/question_generator.j2")
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 66, in load_prompt
+    template = env.get_template(template_name)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\loaders.py", line 209, in get_source
+    raise TemplateNotFound(
+jinja2.exceptions.TemplateNotFound: 'system/question_generator.j2' not found in search path: 'C:\\Users\\thoma\\Desktop\\SAE\\knowledge-by-module\\modules\\M2_Sprint1\\interview_practice_app\\prompts'
+2025-11-26 10:21:33,279 [INFO] modules.ui.ui_start_screen: Interview started after clarification: Software Engineer
+2025-11-26 10:31:45,553 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-26 10:32:03,485 [ERROR] modules.utils: Error in 'generate_next_question': 'system/question_generator.j2' not found in search path: 'C:\\Users\\thoma\\Desktop\\SAE\\knowledge-by-module\\modules\\M2_Sprint1\\interview_practice_app\\prompts'
+Traceback (most recent call last):
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 22, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\interview_logic.py", line 74, in generate_next_question
+    sys_instructions = load_prompt("system/question_generator.j2")
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 66, in load_prompt
+    template = env.get_template(template_name)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\loaders.py", line 209, in get_source
+    raise TemplateNotFound(
+jinja2.exceptions.TemplateNotFound: 'system/question_generator.j2' not found in search path: 'C:\\Users\\thoma\\Desktop\\SAE\\knowledge-by-module\\modules\\M2_Sprint1\\interview_practice_app\\prompts'
+2025-11-26 10:32:03,488 [INFO] modules.ui.ui_start_screen: Interview started after clarification: retail clerk
+2025-11-26 10:48:56,733 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-26 10:48:56,738 [ERROR] modules.utils: Error in 'generate_next_question': 'system/question_generator.j2' not found in search path: 'C:\\Users\\thoma\\Desktop\\SAE\\knowledge-by-module\\modules\\M2_Sprint1\\interview_practice_app\\prompts'
+Traceback (most recent call last):
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 22, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\interview_logic.py", line 74, in generate_next_question
+    sys_instructions = load_prompt("system/question_generator.j2")
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 66, in load_prompt
+    template = env.get_template(template_name)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\loaders.py", line 209, in get_source
+    raise TemplateNotFound(
+jinja2.exceptions.TemplateNotFound: 'system/question_generator.j2' not found in search path: 'C:\\Users\\thoma\\Desktop\\SAE\\knowledge-by-module\\modules\\M2_Sprint1\\interview_practice_app\\prompts'
+2025-11-26 10:48:56,741 [INFO] modules.ui.ui_interview: Answer for Q1: asdasd
+2025-11-26 10:48:56,741 [INFO] modules.ui.ui_interview: Feedback: Feedback could not be parsed.
+2025-11-26 10:52:50,803 [ERROR] modules.utils: Error in 'generate_next_question': 'system/question_generator.j2' not found in search path: 'C:\\Users\\thoma\\Desktop\\SAE\\knowledge-by-module\\modules\\M2_Sprint1\\interview_practice_app\\prompts'
+Traceback (most recent call last):
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 22, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\interview_logic.py", line 74, in generate_next_question
+    sys_instructions = load_prompt("system/question_generator.j2")
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 66, in load_prompt
+    template = env.get_template(template_name)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\loaders.py", line 209, in get_source
+    raise TemplateNotFound(
+jinja2.exceptions.TemplateNotFound: 'system/question_generator.j2' not found in search path: 'C:\\Users\\thoma\\Desktop\\SAE\\knowledge-by-module\\modules\\M2_Sprint1\\interview_practice_app\\prompts'
+2025-11-26 10:53:00,272 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-26 10:53:00,274 [ERROR] modules.utils: Error in 'generate_next_question': 'system/question_generator.j2' not found in search path: 'C:\\Users\\thoma\\Desktop\\SAE\\knowledge-by-module\\modules\\M2_Sprint1\\interview_practice_app\\prompts'
+Traceback (most recent call last):
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 22, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\interview_logic.py", line 74, in generate_next_question
+    sys_instructions = load_prompt("system/question_generator.j2")
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 66, in load_prompt
+    template = env.get_template(template_name)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\loaders.py", line 209, in get_source
+    raise TemplateNotFound(
+jinja2.exceptions.TemplateNotFound: 'system/question_generator.j2' not found in search path: 'C:\\Users\\thoma\\Desktop\\SAE\\knowledge-by-module\\modules\\M2_Sprint1\\interview_practice_app\\prompts'
+2025-11-26 10:53:00,276 [INFO] modules.ui.ui_interview: Answer for Q2: because of the deer.
+2025-11-26 10:53:00,276 [INFO] modules.ui.ui_interview: Feedback: Feedback could not be parsed.
+2025-11-26 12:22:57,455 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-26 12:23:06,798 [ERROR] modules.utils: Error in 'generate_next_question': 'system/question_generator.j2' not found in search path: 'C:\\Users\\thoma\\Desktop\\SAE\\knowledge-by-module\\modules\\M2_Sprint1\\interview_practice_app\\prompts'
+Traceback (most recent call last):
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 22, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\interview_logic.py", line 81, in generate_next_question
+    sys_instructions = load_prompt(SYSTEM_PROMPTS["question_generator"])
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 66, in load_prompt
+    template = env.get_template(template_name)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\loaders.py", line 209, in get_source
+    raise TemplateNotFound(
+jinja2.exceptions.TemplateNotFound: 'system/question_generator.j2' not found in search path: 'C:\\Users\\thoma\\Desktop\\SAE\\knowledge-by-module\\modules\\M2_Sprint1\\interview_practice_app\\prompts'
+2025-11-26 12:23:06,801 [INFO] modules.ui.ui_start_screen: Interview started after clarification: Civil Engineer
+2025-11-26 12:51:51,111 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-26 12:52:00,419 [ERROR] modules.utils: Error in 'generate_next_question': 'system/question_generator.j2' not found in search path: 'C:\\Users\\thoma\\Desktop\\SAE\\knowledge-by-module\\modules\\M2_Sprint1\\interview_practice_app\\prompts'
+Traceback (most recent call last):
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 22, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\interview_logic.py", line 150, in generate_next_question
+    sys_instructions = load_prompt(SYSTEM_PROMPTS["question_generator"])
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 66, in load_prompt
+    template = env.get_template(template_name)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\loaders.py", line 209, in get_source
+    raise TemplateNotFound(
+jinja2.exceptions.TemplateNotFound: 'system/question_generator.j2' not found in search path: 'C:\\Users\\thoma\\Desktop\\SAE\\knowledge-by-module\\modules\\M2_Sprint1\\interview_practice_app\\prompts'
+2025-11-26 12:52:00,423 [INFO] modules.ui.ui_start_screen: Interview started after clarification: Wizard of Light
+2025-11-26 13:47:10,260 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-26 13:47:10,343 [INFO] modules.ui.ui_start_screen: Interview started for job_title=Software Engineer
+2025-11-26 13:47:10,443 [ERROR] modules.utils: Error in 'generate_next_question': 'system/question_generator.j2' not found in search path: 'C:\\Users\\thoma\\Desktop\\SAE\\knowledge-by-module\\modules\\M2_Sprint1\\interview_practice_app\\prompts'
+Traceback (most recent call last):
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 22, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\interview_logic.py", line 141, in generate_next_question
+    sys_instructions = load_prompt(SYSTEM_PROMPTS["question_generator"])
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 66, in load_prompt
+    template = env.get_template(template_name)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\loaders.py", line 209, in get_source
+    raise TemplateNotFound(
+jinja2.exceptions.TemplateNotFound: 'system/question_generator.j2' not found in search path: 'C:\\Users\\thoma\\Desktop\\SAE\\knowledge-by-module\\modules\\M2_Sprint1\\interview_practice_app\\prompts'
+2025-11-26 13:47:29,752 [INFO] modules.ui.ui_sidebar: User requesting restart with job_title=Eingener
+2025-11-26 13:47:35,405 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-26 13:47:35,419 [INFO] modules.ui.ui_sidebar: Job title needs clarification: Clarification needed: The job title "Eingener" is not recognizable. It could be a typo. Did you mean "Engineer"? If so, please specify the type of engineer (e.g., Mechanical Engineer, Software Engineer, Civil Engineer).
+2025-11-26 13:47:37,718 [ERROR] modules.utils: Error in 'generate_next_question': 'system/question_generator.j2' not found in search path: 'C:\\Users\\thoma\\Desktop\\SAE\\knowledge-by-module\\modules\\M2_Sprint1\\interview_practice_app\\prompts'
+Traceback (most recent call last):
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 22, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\interview_logic.py", line 141, in generate_next_question
+    sys_instructions = load_prompt(SYSTEM_PROMPTS["question_generator"])
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 66, in load_prompt
+    template = env.get_template(template_name)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\loaders.py", line 209, in get_source
+    raise TemplateNotFound(
+jinja2.exceptions.TemplateNotFound: 'system/question_generator.j2' not found in search path: 'C:\\Users\\thoma\\Desktop\\SAE\\knowledge-by-module\\modules\\M2_Sprint1\\interview_practice_app\\prompts'
+2025-11-26 14:24:35,559 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-26 14:24:38,345 [INFO] modules.ui.ui_start_screen: Interview started after clarification: Wizard of Light
+2025-11-26 14:24:38,440 [ERROR] modules.utils: Error in 'generate_next_question': 'system/question_generator.j2' not found in search path: 'C:\\Users\\thoma\\Desktop\\SAE\\knowledge-by-module\\modules\\M2_Sprint1\\interview_practice_app\\prompts'
+Traceback (most recent call last):
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 22, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\interview_logic.py", line 131, in generate_next_question
+    sys_instructions = load_prompt(SYSTEM_PROMPTS["question_generator"])
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 66, in load_prompt
+    template = env.get_template(template_name)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\loaders.py", line 209, in get_source
+    raise TemplateNotFound(
+jinja2.exceptions.TemplateNotFound: 'system/question_generator.j2' not found in search path: 'C:\\Users\\thoma\\Desktop\\SAE\\knowledge-by-module\\modules\\M2_Sprint1\\interview_practice_app\\prompts'
+2025-11-26 14:25:45,270 [INFO] modules.ui.ui_sidebar: User requesting restart with job_title=Wizard sasd Light
+2025-11-26 14:25:49,976 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-26 14:25:49,977 [INFO] modules.ui.ui_sidebar: Job title needs clarification: Clarification needed: The job title "Wizard sasd Light" is not recognizable or specific. It seems like there might be a typo or misspelling. Could you mean a role in a specific industry or field, such as "Lighting Wizard" in the entertainment or event industry, or "Wizard of Light" in a creative or design field? Please provide a clearer job title.
+2025-11-26 14:25:51,600 [ERROR] modules.utils: Error in 'generate_next_question': 'system/question_generator.j2' not found in search path: 'C:\\Users\\thoma\\Desktop\\SAE\\knowledge-by-module\\modules\\M2_Sprint1\\interview_practice_app\\prompts'
+Traceback (most recent call last):
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 22, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\interview_logic.py", line 131, in generate_next_question
+    sys_instructions = load_prompt(SYSTEM_PROMPTS["question_generator"])
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 66, in load_prompt
+    template = env.get_template(template_name)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\loaders.py", line 209, in get_source
+    raise TemplateNotFound(
+jinja2.exceptions.TemplateNotFound: 'system/question_generator.j2' not found in search path: 'C:\\Users\\thoma\\Desktop\\SAE\\knowledge-by-module\\modules\\M2_Sprint1\\interview_practice_app\\prompts'
+2025-11-26 14:35:05,500 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-26 14:35:05,508 [ERROR] modules.interview_logic: Failed to parse evaluation JSON: Expecting value: line 1 column 1 (char 0)
+2025-11-26 14:35:05,508 [INFO] modules.ui.ui_interview: Answer for Q1: asdasd
+2025-11-26 14:35:05,509 [INFO] modules.ui.ui_interview: Feedback: Error parsing model response.
+2025-11-26 14:35:17,229 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-26 14:35:46,344 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-26 14:35:46,430 [INFO] modules.ui.ui_start_screen: Interview started for job_title=software engineer
+2025-11-26 14:35:46,514 [ERROR] modules.utils: Error in 'generate_next_question': 'question/base_instructions.j2' not found in search path: 'C:\\Users\\thoma\\Desktop\\SAE\\knowledge-by-module\\modules\\M2_Sprint1\\interview_practice_app\\prompts'
+Traceback (most recent call last):
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 22, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\interview_logic.py", line 134, in generate_next_question
+    prompt_content = build_prompt(
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 84, in build_prompt
+    base = load_prompt_cached(f"{category}/{base_instructions}", **kwargs_for_cache)
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 71, in load_prompt_cached
+    return load_prompt(template_name, kwargs_tuple=tuple(sorted(kwargs.items())))
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 66, in load_prompt
+    template = env.get_template(template_name)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\loaders.py", line 209, in get_source
+    raise TemplateNotFound(
+jinja2.exceptions.TemplateNotFound: 'question/base_instructions.j2' not found in search path: 'C:\\Users\\thoma\\Desktop\\SAE\\knowledge-by-module\\modules\\M2_Sprint1\\interview_practice_app\\prompts'
+2025-11-26 14:45:16,247 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-26 14:45:16,320 [INFO] modules.ui.ui_start_screen: Interview started for job_title=Software Engineer
+2025-11-26 14:45:16,408 [ERROR] modules.utils: Error in 'generate_next_question': 'question/base_instructions.j2' not found in search path: 'C:\\Users\\thoma\\Desktop\\SAE\\knowledge-by-module\\modules\\M2_Sprint1\\interview_practice_app\\prompts'
+Traceback (most recent call last):
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 22, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\interview_logic.py", line 134, in generate_next_question
+    prompt_content = build_prompt(
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 84, in build_prompt
+    base = load_prompt_cached(f"{category}/{base_instructions}", **kwargs_for_cache)
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 71, in load_prompt_cached
+    return load_prompt(template_name, kwargs_tuple=tuple(sorted(kwargs.items())))
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 66, in load_prompt
+    template = env.get_template(template_name)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\jinja2\loaders.py", line 209, in get_source
+    raise TemplateNotFound(
+jinja2.exceptions.TemplateNotFound: 'question/base_instructions.j2' not found in search path: 'C:\\Users\\thoma\\Desktop\\SAE\\knowledge-by-module\\modules\\M2_Sprint1\\interview_practice_app\\prompts'
+2025-11-26 14:45:16,411 [INFO] modules.ui.ui_interview: First question generated: None
+2025-11-26 14:49:48,035 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-26 14:49:48,119 [INFO] modules.ui.ui_start_screen: Interview started for job_title=Software Engineer
+2025-11-26 14:49:50,743 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-26 14:49:50,745 [INFO] modules.ui.ui_interview: First question generated: 'As a software engineer, can you describe a time when you had to solve a complex problem and how you approached it?'
+2025-11-26 14:50:30,741 [INFO] modules.ui.ui_sidebar: User requesting restart with job_title=dispatcher
+2025-11-26 14:50:34,076 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-26 14:50:37,235 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-26 14:50:37,236 [INFO] modules.ui.ui_interview: First question generated: 'As a software engineer, can you explain how you would approach debugging a complex system that you are not familiar with?'
+2025-11-27 08:15:54,430 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-27 08:15:54,512 [INFO] modules.ui.ui_start_screen: Interview started for job_title=Software Engineer
+2025-11-27 08:15:57,594 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-27 08:15:57,595 [INFO] modules.ui.ui_interview: First question generated: 'As a software engineer, can you explain how you would approach debugging a complex system that is not behaving as expected?'
+2025-11-27 08:16:08,472 [INFO] modules.ui.ui_sidebar: User requesting restart with job_title= accountant
+2025-11-27 08:16:10,915 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-27 08:16:14,161 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-27 08:16:14,162 [INFO] modules.ui.ui_interview: First question generated: 'As a software engineer, can you describe a situation where you had to use your problem-solving skills to fix a critical bug in the code?'
+2025-11-27 08:16:38,284 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-27 08:16:38,286 [ERROR] modules.interview_logic: Failed to parse evaluation JSON: Expecting value: line 1 column 1 (char 0)
+2025-11-27 08:23:17,598 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-27 08:23:17,677 [INFO] modules.ui.ui_start_screen: Interview started for job_title=Software Engineer
+2025-11-27 08:23:20,907 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-27 08:23:20,908 [INFO] modules.ui.ui_interview: First question generated: 'As a software engineer, can you describe a time when you had to solve a complex problem and how you approached it?'
+2025-11-27 08:23:26,407 [INFO] modules.ui.ui_sidebar: User requesting restart with job_title=Accountant
+2025-11-27 08:23:29,421 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-27 08:23:31,879 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-27 08:23:34,426 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-27 08:23:34,427 [INFO] modules.ui.ui_interview: First question generated: 'As a software engineer, can you explain how you would approach debugging a complex system that is not behaving as expected?'
+2025-11-27 08:43:12,735 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-27 08:43:12,820 [INFO] modules.ui.ui_start_screen: Interview started for job_title=Software Engineer
+2025-11-27 08:43:15,290 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-27 08:43:15,291 [INFO] modules.ui.ui_interview: First question generated: 'As a software engineer, can you describe a situation where you had to use your problem-solving skills to fix a critical bug in the code?'
+2025-11-27 08:43:36,743 [INFO] modules.ui.ui_sidebar: User requesting restart with job_title=accountant
+2025-11-27 08:43:39,605 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-27 08:43:42,053 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-27 08:43:42,055 [INFO] modules.ui.ui_interview: First question generated: 'As a software engineer, can you explain how you would approach debugging a complex system that is not behaving as expected?'
+2025-11-27 08:44:43,691 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-27 08:44:43,693 [ERROR] modules.interview_logic: Failed to parse evaluation JSON: Expecting value: line 1 column 1 (char 0)
+2025-11-27 08:52:40,189 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-27 08:52:40,276 [INFO] modules.ui.ui_start_screen: Interview started for job_title=Accountant
+2025-11-27 08:52:42,732 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-27 08:52:42,734 [INFO] modules.ui.ui_interview: First question generated: 'As a software engineer, can you describe a situation where you had to use your problem-solving skills to debug a complex piece of code?'
+2025-11-27 08:57:26,121 [INFO] modules.ui.ui_sidebar: User requesting restart with job_title=Engineer
+2025-11-27 08:57:29,973 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-27 08:57:29,974 [INFO] modules.ui.ui_sidebar: Job title needs clarification: Clarification needed: The job title "Engineer" is too broad as it encompasses a wide range of fields. Please specify the type of engineer. For example, are you a Civil Engineer, Mechanical Engineer, or Software Engineer?
+2025-11-27 08:57:42,215 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-27 08:59:59,040 [INFO] modules.ui.ui_sidebar: User requesting restart with job_title=Engineer clerk
+2025-11-27 09:00:02,317 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-27 09:00:02,319 [INFO] modules.ui.ui_sidebar: Job title needs clarification: Clarification needed: The job title "Engineer clerk" is not clear. Are you referring to an Engineering Clerk, who assists engineers by performing administrative tasks? Or perhaps a Clerk Engineer, a term sometimes used in the railway industry? Please provide more specific information.
+2025-11-27 09:00:30,473 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-27 09:01:02,750 [INFO] modules.ui.ui_sidebar: User requesting restart with job_title=baker
+2025-11-27 09:01:05,188 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-27 09:01:07,577 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-27 09:01:07,579 [INFO] modules.ui.ui_interview: First question generated: 'What are the key factors to consider when scaling a small batch recipe to a large production scale, and how would you ensure consistency in taste and quality?'
+2025-11-27 09:01:39,678 [INFO] modules.ui.ui_sidebar: User requesting restart with job_title=joiner
+2025-11-27 09:01:42,121 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-27 09:01:44,567 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-27 09:01:44,569 [INFO] modules.ui.ui_interview: First question generated: "Can you describe a complex joinery project you've worked on where you had to use advanced techniques to overcome challenges, and how did you ensure the quality and precision of your work?"
+2025-11-27 09:01:52,671 [INFO] modules.ui.ui_sidebar: User requesting restart with job_title=joiner
+2025-11-27 09:01:55,141 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-27 09:01:58,762 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-27 09:01:58,763 [INFO] modules.ui.ui_interview: First question generated: 'Can you describe a time when you had to handle a particularly difficult client or customer while working on a joinery project? How did you manage the situation and what was the outcome?'
+2025-11-27 09:02:52,084 [INFO] modules.ui.ui_sidebar: User requesting restart with job_title=fahrdienstleiter
+2025-11-27 09:02:54,572 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-27 09:02:57,052 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-27 09:02:57,053 [INFO] modules.ui.ui_interview: First question generated: 'Can you describe a situation where you had to make a critical decision under extreme pressure, and how did you ensure the safety and efficiency of the rail operations?'
+2025-11-27 09:04:26,917 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-27 09:04:26,925 [ERROR] modules.interview_logic: Failed to parse evaluation JSON: Expecting value: line 1 column 1 (char 0)
+2025-11-28 08:52:00,123 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 08:52:00,206 [INFO] modules.ui.ui_start_screen: Interview started for job_title=Dispatcher
+2025-11-28 08:52:03,343 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 08:52:03,345 [INFO] modules.ui.ui_interview: First question generated: 'Can you describe a situation where you had to make a quick decision under pressure?'
+2025-11-28 08:53:03,949 [ERROR] modules.utils: Error in 'openai_call': RetryError[<Future at 0x1777512bb20 state=finished raised TypeError>]
+Traceback (most recent call last):
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\tenacity\__init__.py", line 480, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 101, in _call_openai
+    response = _client.responses.create(**request_kwargs)
+TypeError: Responses.create() got an unexpected keyword argument 'response_format'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 24, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\modules\utils.py", line 136, in openai_call
+    return _call_openai(sys_instructions, prompt_text, temperature, response_format)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\tenacity\__init__.py", line 338, in wrapped_f
+    return copy(f, *args, **kw)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\tenacity\__init__.py", line 477, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\tenacity\__init__.py", line 378, in iter
+    result = action(retry_state)
+  File "C:\Users\thoma\AppData\Local\pypoetry\Cache\virtualenvs\interview-practice-app--g2Z2Tjt-py3.10\lib\site-packages\tenacity\__init__.py", line 421, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0x1777512bb20 state=finished raised TypeError>]
+2025-11-28 09:19:37,094 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 09:19:37,174 [INFO] modules.ui.ui_start_screen: Interview started for job_title=Dispatcher
+2025-11-28 09:19:38,150 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 400 Bad Request"
+2025-11-28 09:19:40,923 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 400 Bad Request"
+2025-11-28 09:19:43,189 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 400 Bad Request"
+2025-11-28 09:19:43,190 [ERROR] modules.utils: Error in 'openai_call': RetryError[<Future at 0x24ca6c14820 state=finished raised BadRequestError>]
+2025-11-28 09:19:43,190 [INFO] modules.ui.ui_interview: First question generated: 'Could not generate question. Please try again.'
+2025-11-28 09:20:12,574 [INFO] modules.ui.ui_sidebar: User requesting restart with job_title=Dispatcher
+2025-11-28 09:20:16,728 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 09:20:17,015 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 400 Bad Request"
+2025-11-28 09:20:19,623 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 400 Bad Request"
+2025-11-28 09:20:21,880 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 400 Bad Request"
+2025-11-28 09:20:21,881 [ERROR] modules.utils: Error in 'openai_call': RetryError[<Future at 0x24ca659a680 state=finished raised BadRequestError>]
+2025-11-28 09:20:21,881 [INFO] modules.ui.ui_interview: First question generated: 'Could not generate question. Please try again.'
+2025-11-28 09:23:07,230 [INFO] modules.ui.ui_sidebar: User requesting restart with job_title=Dispatcher
+2025-11-28 09:23:09,763 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 09:23:10,553 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 400 Bad Request"
+2025-11-28 09:23:12,832 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 400 Bad Request"
+2025-11-28 09:23:15,070 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 400 Bad Request"
+2025-11-28 09:23:15,071 [ERROR] modules.utils: Error in 'openai_call': RetryError[<Future at 0x24ca64a61d0 state=finished raised BadRequestError>]
+2025-11-28 09:23:15,071 [INFO] modules.ui.ui_interview: First question generated: 'Could not generate question. Please try again.'
+2025-11-28 09:27:39,283 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 09:27:39,476 [INFO] modules.ui.ui_start_screen: Interview started for job_title=Dispatcher
+2025-11-28 09:27:39,805 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 400 Bad Request"
+2025-11-28 09:27:42,033 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 400 Bad Request"
+2025-11-28 09:27:44,250 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 400 Bad Request"
+2025-11-28 09:27:44,251 [ERROR] modules.utils: Error in 'openai_call': RetryError[<Future at 0x25e0cda5c00 state=finished raised BadRequestError>]
+2025-11-28 09:27:44,251 [INFO] modules.ui.ui_interview: First question generated: 'Could not generate question. Please try again.'
+2025-11-28 09:33:11,512 [INFO] modules.ui.ui_sidebar: User requesting restart with job_title=Dispatcher
+2025-11-28 09:33:13,930 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 09:33:18,008 [ERROR] modules.utils: Error in 'openai_call': RetryError[<Future at 0x25e0cd5ab90 state=finished raised TypeError>]
+2025-11-28 09:33:18,009 [INFO] modules.ui.ui_interview: First question generated: 'Could not generate question. Please try again.'
+2025-11-28 09:44:45,337 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 09:44:45,398 [INFO] modules.ui.ui_start_screen: Interview started for job_title=Software Engineer
+2025-11-28 09:44:47,804 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 09:44:47,805 [INFO] modules.ui.ui_interview: First question generated: 'Can you describe a time when you faced a challenge while working on a team project and how you contributed to overcoming it?'
+2025-11-28 11:28:12,024 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 11:34:46,264 [INFO] modules.ui.ui_sidebar: User requesting restart with job_title=Software Engineer
+2025-11-28 11:34:49,048 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 11:34:51,366 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 11:34:51,375 [INFO] modules.ui.ui_interview: First question generated: 'Can you describe a time when you faced a challenge while working on a project and how you overcame it?'
+2025-11-28 11:35:08,484 [INFO] modules.ui.ui_sidebar: User requesting restart with job_title=Eingener
+2025-11-28 11:35:11,175 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 11:35:11,176 [INFO] modules.ui.ui_sidebar: Job title needs clarification: Clarification needed: The job title "Eingener" appears to be misspelled or unclear. It may be intended to refer to "Engineer," "Designer," or another specific role. Please clarify what you meant by "Eingener."
+2025-11-28 11:35:21,152 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 11:35:28,676 [INFO] modules.ui.ui_sidebar: User requesting restart with job_title=Eingener
+2025-11-28 11:35:31,764 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 11:35:31,766 [INFO] modules.ui.ui_sidebar: Job title needs clarification: Clarification needed: The job title "Eingener" appears to be misspelled or unclear. It may be intended to refer to "Engineer" or another specific role. Please clarify what you mean, such as:
+
+1. Engineer (e.g., Software Engineer, Civil Engineer)
+2. Designer (e.g., Graphic Designer, Product Designer)
+3. Any other specific role you had in mind.
+2025-11-28 11:35:40,736 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 11:36:37,326 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 11:36:37,399 [INFO] modules.ui.ui_start_screen: Interview started for job_title=Baker
+2025-11-28 11:36:40,966 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 11:36:40,967 [INFO] modules.ui.ui_interview: First question generated: 'What techniques do you use to ensure consistent dough fermentation and how do you adjust your process for different types of bread?'
+2025-11-28 11:37:16,080 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 11:37:18,497 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 11:38:09,932 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 11:38:12,281 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 11:39:58,926 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 11:40:01,314 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 11:40:17,711 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 11:40:20,137 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 11:40:45,135 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 11:40:47,731 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 11:41:19,733 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 11:41:22,657 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 11:56:45,590 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 11:56:45,667 [INFO] modules.ui.ui_start_screen: Interview started for job_title=Dispatcher
+2025-11-28 11:56:48,040 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 11:56:48,041 [INFO] modules.ui.ui_interview: First question generated: 'How do you prioritize multiple urgent requests from different clients while ensuring timely communication and service delivery?'
+2025-11-28 11:57:30,866 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 11:57:33,177 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 11:58:34,789 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 11:58:37,169 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 11:59:15,837 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 11:59:18,258 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 11:59:49,753 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 11:59:52,035 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 12:00:09,125 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 12:00:11,496 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 12:01:57,575 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"

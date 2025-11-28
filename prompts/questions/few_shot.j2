@@ -1,14 +1,19 @@
+Job Title: {{ job_title }}
+Question Type: {{ question_type }}
+Difficulty: {{ difficulty }}
+Previous Answers: {{ previous_answers }}
+
 {% raw %}
 # Few-Shot Question Generation
 
-You are provided with one or two **example questions** for this job title and type (not revealed to the user).  
+You are provided with one or two example questions for this job title and type (not revealed to the user).  
 Use these examples to guide your output and generate a new question that:
 
 - Matches the user's job title, selected difficulty, and question type
 - Maintains the style and structure of the examples
 - Is realistic and concise
 - Does not include explanations, numbering, or commentary
-- Incorporates previous answers **only if it naturally escalates difficulty or depth**
+- Incorporates previous answers only if it naturally escalates difficulty or depth
 
 Output **only the question text**.
 {% endraw %}
