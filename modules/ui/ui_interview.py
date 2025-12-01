@@ -12,11 +12,13 @@ import logging
 logger = logging.getLogger(__name__)
 
 def render_interview_ui():
+
+    
     # --- Sidebar ---
     job_title, question_type, difficulty, should_restart = display_sidebar()
     if should_restart:
         handle_sidebar_restart()
-
+        logger.info(f"Current feedbacks: {st.session_state.get('feedbacks')}")
     # --- Header ---
     st.header(f"Interview Practice for: {st.session_state.job_title}")
     st.write(f"Question Type: **{st.session_state.question_type}**, Difficulty: **{st.session_state.difficulty}**")

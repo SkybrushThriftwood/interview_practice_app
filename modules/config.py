@@ -9,7 +9,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROMPTS_TEMPLATE_DIR = os.path.join(BASE_DIR, "prompts")
 
 # Active techniques
-ACTIVE_QUESTION_TECHNIQUE = "zero_shot.j2"
+ACTIVE_QUESTION_TECHNIQUE = "contextual_progression.j2"
 ACTIVE_SUMMARY_TECHNIQUE = "default.j2"
 ACTIVE_VALIDATION_TECHNIQUE = "validate_job_title.j2"
 

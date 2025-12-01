@@ -12,6 +12,8 @@ from modules.config import (
 from typing import Tuple, Optional
 import logging
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+
 
 # --- MOCK API MODE ---
 mock_questions = [
@@ -37,13 +39,15 @@ def restart_interview():
     # Reset interview progress only
     st.session_state.questions = []
     st.session_state.answers = []
+    st.session_state.feedbacks = []
     st.session_state.current_question_index = 0
     
     # Reset sidebar clarification state
     st.session_state.sidebar_needs_clarification = False
     st.session_state.sidebar_clarification_message = ""
     st.session_state.pending_sidebar_job_title = ""
-
+    
+    logger.info(f"Clearing feedbacks: {st.session_state.get('feedbacks')}")
 
 def initialize_interview_session(job_title: str, question_type: str, difficulty: str) -> None:
     """
@@ -58,9 +62,9 @@ def initialize_interview_session(job_title: str, question_type: str, difficulty:
     st.session_state.job_title = job_title
     st.session_state.question_type = question_type
     st.session_state.difficulty = difficulty
-    st.session_state.questions = []            # List of asked questions
-    st.session_state.answers = []              # User answers
-    st.session_state.current_question_index = 0  # Tracks which question is being displayed
+    st.session_state.questions = []            
+    st.session_state.answers = []              
+    st.session_state.current_question_index = 0  
 
 def evaluate_answer_and_generate_next(user_answer: str) -> Tuple[str, Optional[str]]:
     """
@@ -69,11 +73,12 @@ def evaluate_answer_and_generate_next(user_answer: str) -> Tuple[str, Optional[s
     """
     if USE_MOCK_API:
         return "Mock feedback: good answer.", "Mock next question."
-
+    
     index = st.session_state.current_question_index
     sys_instructions = load_prompt(SYSTEM_PROMPTS["answer_evaluator"])
     selected_persona = st.session_state.evaluation_style
-    persona_template = PERSONA_MAP.get(selected_persona, "default.j2")
+    persona_template = PERSONA_MAP.get(selected_persona, "Hiring Manager")
+
 
     prompt_text = build_prompt(
         category="evaluation",
@@ -87,6 +92,9 @@ def evaluate_answer_and_generate_next(user_answer: str) -> Tuple[str, Optional[s
         difficulty=st.session_state.difficulty,         
         question_type=st.session_state.question_type,
     )
+
+    logger.info(f"[DEBUG] Evaluation prompt:\n{prompt_text}")
+    logger.info(f"[DEBUG] User answer:\n{user_answer}")
 
     # Structured JSON schema for response
     response_format = {
@@ -112,7 +120,7 @@ def evaluate_answer_and_generate_next(user_answer: str) -> Tuple[str, Optional[s
         temperature=0.4,
         structured_output=response_format
     )
-
+    
     # Always ensure keys exist
     try:
         data = json.loads(raw_response)
@@ -181,7 +189,7 @@ def generate_next_question() -> str:
     response = openai_call(
         sys_instructions=sys_instructions,
         prompt_text=prompt_text,
-        temperature=0.2,
+        temperature=0.3,
         structured_output=structured_output
     )
 

@@ -2,6 +2,7 @@ import os
 import logging
 from jinja2 import Environment, FileSystemLoader
 from openai import OpenAI
+from pathlib import Path
 from dotenv import load_dotenv
 from functools import lru_cache
 from modules.config import PROMPTS_TEMPLATE_DIR
@@ -162,8 +163,21 @@ def render_template(template_name: str, **kwargs) -> str:
     This function is intentionally NOT cached so that
     job_title, question history, and state updates always apply.
     """
+    logger.info(f"[PROMPT LOADER] Loading prompt template: {template_name}")
     template = load_template(template_name)
-    return template.render(**kwargs)
+    rendered = template.render(**kwargs)
+
+    try:
+        logger.debug(f"=== FULLY RENDERED PROMPT ({template_name}) ===\n{rendered}")
+    except UnicodeEncodeError:
+        # fallback for Windows console
+        safe_log_file = Path("logs") / "full_prompt.log"
+        safe_log_file.parent.mkdir(exist_ok=True)
+        with safe_log_file.open("w", encoding="utf-8") as f:
+            f.write(rendered)
+        logger.debug(f"Prompt contained characters that cannot be printed in console. Written to {safe_log_file}")
+
+    return rendered
 
 
 # ---------------------------
@@ -181,7 +195,10 @@ def build_prompt(category: str, base_instructions: str, technique: str, **kwargs
     - base instruction template
     - technique template
     """
-
+    logger.info(
+        f"[PROMPT BUILDER] category={category}, "
+        f"base={base_instructions}, technique={technique}"
+    )
     base = load_prompt(f"{category}/{base_instructions}", **kwargs)
     technique_section = load_prompt(f"{category}/{technique}", **kwargs)
 

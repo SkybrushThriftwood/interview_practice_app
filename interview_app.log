@@ -1125,3 +1125,766 @@ tenacity.RetryError: RetryError[<Future at 0x1777512bb20 state=finished raised T
 2025-11-28 12:00:09,125 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
 2025-11-28 12:00:11,496 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
 2025-11-28 12:01:57,575 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 14:02:05,134 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 14:02:24,805 [INFO] modules.ui.ui_start_screen: Interview started after clarification: construction joiner
+2025-11-28 14:02:27,875 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 14:02:27,890 [INFO] modules.ui.ui_interview: First question generated: "Can you describe a time when you had to work closely with a team to complete a construction project? What was your role and how did you contribute to the team's success?"
+2025-11-28 14:02:52,859 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 14:02:55,175 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 14:03:48,020 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 14:03:50,891 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 14:04:03,182 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 14:04:05,690 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 14:04:30,309 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 14:04:32,712 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 14:04:54,676 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 14:04:57,063 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 14:06:46,583 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 14:06:46,668 [INFO] modules.ui.ui_start_screen: Interview started for job_title=carpenter joiner
+2025-11-28 14:06:49,852 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 14:06:49,854 [INFO] modules.ui.ui_interview: First question generated: 'Can you describe a time when you had to work closely with a client to understand their vision for a project? How did you ensure their needs were met?'
+2025-11-28 14:06:59,894 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 14:07:02,302 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 14:07:51,800 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-28 14:07:54,417 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 09:52:11,794 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 09:52:11,890 [INFO] modules.ui.ui_start_screen: Interview started for job_title=Baker
+2025-12-01 09:52:15,003 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 09:52:15,005 [INFO] modules.ui.ui_interview: First question generated: 'Can you describe a time when you had to adjust a recipe or baking technique to accommodate a specific dietary restriction or customer request? What steps did you take to ensure the final product met quality standards?'
+2025-12-01 09:52:54,445 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 09:52:57,523 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 10:25:17,647 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: <class 'pathlib.Path'>
+2025-12-01 10:25:17,650 [INFO] modules.utils: [PROMPT BUILDER] category=validation, base=validation/base_instructions.j2, technique=validate_job_title.j2
+2025-12-01 10:25:17,650 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: <class 'pathlib.Path'>
+2025-12-01 10:25:17,650 [ERROR] modules.utils: Failed to load template 'validation/validation/base_instructions.j2': 'validation/validation/base_instructions.j2' not found in search path: 'C:\\Users\\thoma\\Desktop\\SAE\\knowledge-by-module\\modules\\M2_Sprint1\\interview_practice_app\\prompts'
+2025-12-01 10:26:36,288 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: <class 'pathlib.Path'>
+2025-12-01 10:26:36,290 [INFO] modules.utils: [PROMPT BUILDER] category=validation, base=base_instructions.j2, technique=validate_job_title.j2
+2025-12-01 10:26:36,290 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: <class 'pathlib.Path'>
+2025-12-01 10:26:36,292 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: <class 'pathlib.Path'>
+2025-12-01 10:26:39,924 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 10:26:39,999 [INFO] modules.ui.ui_start_screen: Interview started for job_title=Software Engineer
+2025-12-01 10:26:40,078 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: <class 'pathlib.Path'>
+2025-12-01 10:26:40,080 [INFO] modules.utils: [PROMPT BUILDER] category=questions, base=base_instructions.j2, technique=contextual_progression.j2
+2025-12-01 10:26:40,080 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: <class 'pathlib.Path'>
+2025-12-01 10:26:40,081 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: <class 'pathlib.Path'>
+2025-12-01 10:26:42,752 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 10:26:42,753 [INFO] modules.ui.ui_interview: First question generated: 'Can you describe a time when you had to work closely with a team to solve a technical problem? What role did you play in the collaboration?'
+2025-12-01 10:27:09,838 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: <class 'pathlib.Path'>
+2025-12-01 10:27:09,838 [INFO] modules.utils: [PROMPT BUILDER] category=evaluation, base=base_instructions.j2, technique=personality_hiring_manager.j2
+2025-12-01 10:27:09,838 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: <class 'pathlib.Path'>
+2025-12-01 10:27:09,849 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: <class 'pathlib.Path'>
+2025-12-01 10:27:12,582 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 10:27:12,586 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: <class 'pathlib.Path'>
+2025-12-01 10:27:12,586 [INFO] modules.utils: [PROMPT BUILDER] category=questions, base=base_instructions.j2, technique=contextual_progression.j2
+2025-12-01 10:27:12,586 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: <class 'pathlib.Path'>
+2025-12-01 10:27:12,586 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: <class 'pathlib.Path'>
+2025-12-01 10:27:14,983 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 10:33:25,900 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: system/job_title_validator.j2
+2025-12-01 10:33:25,903 [INFO] modules.utils: [PROMPT LOADER] Resolved template file: C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\prompts\system\job_title_validator.j2
+2025-12-01 10:33:25,903 [INFO] modules.utils: [PROMPT BUILDER] category=validation, base=base_instructions.j2, technique=validate_job_title.j2
+2025-12-01 10:33:25,903 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: validation/base_instructions.j2
+2025-12-01 10:33:25,904 [INFO] modules.utils: [PROMPT LOADER] Resolved template file: C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\prompts\validation\base_instructions.j2
+2025-12-01 10:33:25,904 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: validation/validate_job_title.j2
+2025-12-01 10:33:25,906 [INFO] modules.utils: [PROMPT LOADER] Resolved template file: C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\prompts\validation\validate_job_title.j2
+2025-12-01 10:33:29,237 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 10:33:29,308 [INFO] modules.ui.ui_start_screen: Interview started for job_title=Software Engineer
+2025-12-01 10:33:29,403 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: system/eval_and_question.j2
+2025-12-01 10:33:29,405 [INFO] modules.utils: [PROMPT LOADER] Resolved template file: C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\prompts\system\eval_and_question.j2
+2025-12-01 10:33:29,405 [INFO] modules.utils: [PROMPT BUILDER] category=questions, base=base_instructions.j2, technique=contextual_progression.j2
+2025-12-01 10:33:29,405 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: questions/base_instructions.j2
+2025-12-01 10:33:29,406 [INFO] modules.utils: [PROMPT LOADER] Resolved template file: C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\prompts\questions\base_instructions.j2
+2025-12-01 10:33:29,406 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: questions/contextual_progression.j2
+2025-12-01 10:33:29,408 [INFO] modules.utils: [PROMPT LOADER] Resolved template file: C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\prompts\questions\contextual_progression.j2
+2025-12-01 10:33:31,747 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 10:33:31,749 [INFO] modules.ui.ui_interview: First question generated: 'Can you describe a time when you had to advocate for a technical solution that was initially met with resistance from your team? How did you approach the situation and what was the outcome?'
+2025-12-01 10:34:38,055 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: system/eval_and_question.j2
+2025-12-01 10:34:38,055 [INFO] modules.utils: [PROMPT LOADER] Resolved template file: C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\prompts\system\eval_and_question.j2
+2025-12-01 10:34:38,055 [INFO] modules.utils: [PROMPT BUILDER] category=evaluation, base=base_instructions.j2, technique=personality_hiring_manager.j2
+2025-12-01 10:34:38,056 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: evaluation/base_instructions.j2
+2025-12-01 10:34:38,057 [INFO] modules.utils: [PROMPT LOADER] Resolved template file: C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\prompts\evaluation\base_instructions.j2
+2025-12-01 10:34:38,057 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: evaluation/personality_hiring_manager.j2
+2025-12-01 10:34:38,059 [INFO] modules.utils: [PROMPT LOADER] Resolved template file: C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\prompts\evaluation\personality_hiring_manager.j2
+2025-12-01 10:34:40,597 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 10:34:40,599 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: system/eval_and_question.j2
+2025-12-01 10:34:40,600 [INFO] modules.utils: [PROMPT LOADER] Resolved template file: C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\prompts\system\eval_and_question.j2
+2025-12-01 10:34:40,600 [INFO] modules.utils: [PROMPT BUILDER] category=questions, base=base_instructions.j2, technique=contextual_progression.j2
+2025-12-01 10:34:40,600 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: questions/base_instructions.j2
+2025-12-01 10:34:40,600 [INFO] modules.utils: [PROMPT LOADER] Resolved template file: C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\prompts\questions\base_instructions.j2
+2025-12-01 10:34:40,600 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: questions/contextual_progression.j2
+2025-12-01 10:34:40,600 [INFO] modules.utils: [PROMPT LOADER] Resolved template file: C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\prompts\questions\contextual_progression.j2
+2025-12-01 10:34:43,427 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 13:13:16,762 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: system/job_title_validator.j2
+2025-12-01 13:13:16,765 [INFO] modules.utils: [PROMPT LOADER] Resolved template file: C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\prompts\system\job_title_validator.j2
+2025-12-01 13:13:16,765 [INFO] modules.utils: [PROMPT BUILDER] category=validation, base=base_instructions.j2, technique=validate_job_title.j2
+2025-12-01 13:13:16,765 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: validation/base_instructions.j2
+2025-12-01 13:13:16,767 [INFO] modules.utils: [PROMPT LOADER] Resolved template file: C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\prompts\validation\base_instructions.j2
+2025-12-01 13:13:16,767 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: validation/validate_job_title.j2
+2025-12-01 13:13:16,769 [INFO] modules.utils: [PROMPT LOADER] Resolved template file: C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\prompts\validation\validate_job_title.j2
+2025-12-01 13:13:20,335 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 13:13:20,418 [INFO] modules.ui.ui_start_screen: Interview started for job_title=Software Engineer
+2025-12-01 13:13:20,502 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: system/eval_and_question.j2
+2025-12-01 13:13:20,503 [INFO] modules.utils: [PROMPT LOADER] Resolved template file: C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\prompts\system\eval_and_question.j2
+2025-12-01 13:13:20,503 [INFO] modules.utils: [PROMPT BUILDER] category=questions, base=base_instructions.j2, technique=contextual_progression.j2
+2025-12-01 13:13:20,504 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: questions/base_instructions.j2
+2025-12-01 13:13:20,505 [INFO] modules.utils: [PROMPT LOADER] Resolved template file: C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\prompts\questions\base_instructions.j2
+2025-12-01 13:13:20,505 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: questions/contextual_progression.j2
+2025-12-01 13:13:20,506 [INFO] modules.utils: [PROMPT LOADER] Resolved template file: C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\prompts\questions\contextual_progression.j2
+2025-12-01 13:13:23,230 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 13:13:23,231 [INFO] modules.ui.ui_interview: First question generated: 'Can you explain how you would optimize a slow-performing SQL query? Please describe the steps you would take and any tools or techniques you might use.'
+2025-12-01 13:15:10,493 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: system/eval_and_question.j2
+2025-12-01 13:15:10,493 [INFO] modules.utils: [PROMPT LOADER] Resolved template file: C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\prompts\system\eval_and_question.j2
+2025-12-01 13:15:10,493 [INFO] modules.utils: [PROMPT BUILDER] category=evaluation, base=base_instructions.j2, technique=personality_hiring_manager.j2
+2025-12-01 13:15:10,493 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: evaluation/base_instructions.j2
+2025-12-01 13:15:10,496 [INFO] modules.utils: [PROMPT LOADER] Resolved template file: C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\prompts\evaluation\base_instructions.j2
+2025-12-01 13:15:10,496 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: evaluation/personality_hiring_manager.j2
+2025-12-01 13:15:10,497 [INFO] modules.utils: [PROMPT LOADER] Resolved template file: C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\prompts\evaluation\personality_hiring_manager.j2
+2025-12-01 13:15:10,552 [INFO] modules.interview_logic: [DEBUG] User answer:
+I would start by analyzing the query execution plan to identify bottlenecks and expensive operations. Next, I’d consider adding indexes, rewriting joins or subqueries, and ensuring proper use of filtering and aggregation to reduce data scanned. I’d also use profiling tools like EXPLAIN or SQL Server Profiler to measure improvements and iteratively refine the query for better performance.
+2025-12-01 13:15:10,555 [INFO] modules.interview_logic: [DEBUG] User answer:
+I would start by analyzing the query execution plan to identify bottlenecks and expensive operations. Next, I’d consider adding indexes, rewriting joins or subqueries, and ensuring proper use of filtering and aggregation to reduce data scanned. I’d also use profiling tools like EXPLAIN or SQL Server Profiler to measure improvements and iteratively refine the query for better performance.
+2025-12-01 13:15:13,468 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 13:15:13,469 [INFO] modules.interview_logic: [DEBUG] Raw model response: {"feedback":"Your answer is too brief. Please elaborate with specific examples, context, and details relevant to 'What strategies do you use to manage conflicts within a team?'.","next_question":null}
+2025-12-01 13:15:13,469 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: system/eval_and_question.j2
+2025-12-01 13:15:13,470 [INFO] modules.utils: [PROMPT LOADER] Resolved template file: C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\prompts\system\eval_and_question.j2
+2025-12-01 13:15:13,470 [INFO] modules.utils: [PROMPT BUILDER] category=questions, base=base_instructions.j2, technique=contextual_progression.j2
+2025-12-01 13:15:13,470 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: questions/base_instructions.j2
+2025-12-01 13:15:13,470 [INFO] modules.utils: [PROMPT LOADER] Resolved template file: C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\prompts\questions\base_instructions.j2
+2025-12-01 13:15:13,471 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: questions/contextual_progression.j2
+2025-12-01 13:15:13,471 [INFO] modules.utils: [PROMPT LOADER] Resolved template file: C:\Users\thoma\Desktop\SAE\knowledge-by-module\modules\M2_Sprint1\interview_practice_app\prompts\questions\contextual_progression.j2
+2025-12-01 13:15:16,186 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 13:27:49,420 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: system/job_title_validator.j2
+2025-12-01 13:27:49,424 [INFO] modules.utils: [DEBUG] Rendered template preview: You are an assistant responsible for validating job titles provided by users.
+
+Your task is to:
+- determine whether the job title is valid and commonly recognized,
+- detect ambiguous or unclear entries,
+- request clarification when necessary.
+
+Always respond clearly and concisely. Do not create job titles that do not exist.
+Do not assume meanings that are not supported by the input.
+2025-12-01 13:27:49,424 [INFO] modules.utils: [PROMPT BUILDER] category=validation, base=base_instructions.j2, technique=validate_job_title.j2
+2025-12-01 13:27:49,424 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: validation/base_instructions.j2
+2025-12-01 13:27:49,425 [INFO] modules.utils: [DEBUG] Rendered template preview: You will receive a job title that the user intends to use for an interview simulation.
+
+Your responsibilities:
+1. Assess whether the job title is specific and recognizable.
+2. Identify titles that are too broad, vague, misspelled, or incomplete.
+3. Decide whether clarification is required.
+
+A job title is considered valid when:
+- it corresponds to an established professional role,
+- it is specific enough to guide an interview scenario,
+- it is not simply a domain, industry, or skill area.
+
+If th
+2025-12-01 13:27:49,425 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: validation/validate_job_title.j2
+2025-12-01 13:27:49,427 [INFO] modules.utils: [DEBUG] Rendered template preview: Evaluate the following job title:
+
+"Joiner"
+
+Determine:
+- whether it is a valid, specific job title,
+- or whether clarification is required.
+
+If clarification is needed, start your response with:
+"Clarification needed:"
+
+Otherwise, confirm that the title is valid.
+2025-12-01 13:27:57,013 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 13:28:05,699 [INFO] modules.ui.ui_start_screen: Interview started after clarification: Furniture Joiner
+2025-12-01 13:28:05,798 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: system/eval_and_question.j2
+2025-12-01 13:28:05,800 [INFO] modules.utils: [DEBUG] Rendered template preview: 
+You are the Interview Engine.
+
+Your job depends on the mode passed into the prompt:
+
+============================================================
+MODE 1: "generate_question"
+============================================================
+
+You generate **ONE** interview question that:
+- matches the job title
+- matches the selected difficulty
+- matches the user's chosen question type
+- explores a DIFFERENT competency area than previous questions
+- avoids repetition of themes, scenarios, or phrasings
+2025-12-01 13:28:05,800 [INFO] modules.utils: [PROMPT BUILDER] category=questions, base=base_instructions.j2, technique=contextual_progression.j2
+2025-12-01 13:28:05,801 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: questions/base_instructions.j2
+2025-12-01 13:28:05,808 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: questions/contextual_progression.j2
+2025-12-01 13:28:05,810 [INFO] modules.utils: [DEBUG] Rendered template preview: Job Title: Furniture Joiner
+Question Type: Behavioral
+Difficulty: Easy
+Previous Answers Summary: []
+
+
+# Contextual Progression Technique
+Using previous answers as soft context, generate a question that builds logically from them while staying aligned with the selected difficulty and type. Do not reference previous answers explicitly.
+Output ONLY the question.
+
+2025-12-01 13:28:09,460 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 13:28:09,469 [INFO] modules.ui.ui_interview: First question generated: 'Can you describe a time when you had to collaborate with a team to complete a furniture project? What role did you play, and how did you ensure effective communication throughout the process?'
+2025-12-01 13:28:34,986 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: system/eval_and_question.j2
+2025-12-01 13:28:34,987 [INFO] modules.utils: [DEBUG] Rendered template preview: 
+You are the Interview Engine.
+
+Your job depends on the mode passed into the prompt:
+
+============================================================
+MODE 1: "generate_question"
+============================================================
+
+You generate **ONE** interview question that:
+- matches the job title
+- matches the selected difficulty
+- matches the user's chosen question type
+- explores a DIFFERENT competency area than previous questions
+- avoids repetition of themes, scenarios, or phrasings
+2025-12-01 13:28:34,987 [INFO] modules.utils: [PROMPT BUILDER] category=evaluation, base=base_instructions.j2, technique=personality_hiring_manager.j2
+2025-12-01 13:28:34,987 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: evaluation/base_instructions.j2
+2025-12-01 13:28:34,989 [INFO] modules.utils: [DEBUG] Rendered template preview: 
+# Evaluation Base Instructions (Shared Across All Personas)
+
+You will evaluate the candidate's most recent answer.
+
+VARIABLES AVAILABLE:
+- Current question: {{ question }}
+- Candidate's answer: {{ answer }}
+- Previous answers: {% for ans in previous_answers %}{{ loop.index }}. {{ ans }}{% if not loop.last %}\n{% endif %}{% endfor %}
+- Job title: {{ job_title }}
+- Question type: {{ question_type }}
+- Difficulty: {{ difficulty }}
+
+ANSWER QUALITY DETECTION:
+First, categorize the answer quality usi
+2025-12-01 13:28:34,989 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: evaluation/personality_hiring_manager.j2
+2025-12-01 13:28:34,990 [INFO] modules.utils: [DEBUG] Rendered template preview: 
+# Hiring Manager Evaluation Mode
+
+You are evaluating the candidate as a *pragmatic, business-oriented hiring manager*.
+Your goal is to judge whether this person can perform the real job.
+
+Tone:
+- Direct, practical, no-nonsense.
+- Focus on value, outcomes, clarity, and ownership.
+- Avoid corporate fluff.
+
+Structure Your Evaluation:
+1. **What impressed me (from a manager’s perspective)**
+2. **Where this answer concerns me**
+3. **Impact on job performance**
+4. **Actionable advice for improvement**
+2025-12-01 13:28:34,993 [INFO] modules.interview_logic: [DEBUG] User answer:
+I worked with a team to build custom cabinets for a client, where each member was responsible for different stages of cutting, assembly, and finishing. I coordinated the workflow, kept track of progress, and regularly updated the team on measurements and design adjustments to ensure everyone stayed aligned. By holding short check-ins and documenting key decisions, we completed the project efficiently and delivered a high-quality product that matched the client’s vision.
+2025-12-01 13:28:34,994 [DEBUG] modules.interview_logic: === LLM CALL START ===
+2025-12-01 13:28:35,001 [DEBUG] modules.interview_logic: Structured Output Schema:
+{'format': {'type': 'json_schema', 'name': 'evaluation_result', 'strict': True, 'schema': {'type': 'object', 'properties': {'feedback': {'type': 'string'}, 'next_question': {'type': ['string', 'null']}}, 'required': ['feedback', 'next_question'], 'additionalProperties': False}}}
+2025-12-01 13:28:35,001 [DEBUG] modules.interview_logic: === Sending request to OpenAI ===
+2025-12-01 13:28:35,005 [INFO] modules.interview_logic: [DEBUG] User answer:
+I worked with a team to build custom cabinets for a client, where each member was responsible for different stages of cutting, assembly, and finishing. I coordinated the workflow, kept track of progress, and regularly updated the team on measurements and design adjustments to ensure everyone stayed aligned. By holding short check-ins and documenting key decisions, we completed the project efficiently and delivered a high-quality product that matched the client’s vision.
+2025-12-01 13:28:38,689 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 13:28:38,694 [DEBUG] modules.interview_logic: === LLM CALL END — Raw Response Below ===
+2025-12-01 13:28:38,694 [INFO] modules.interview_logic: [DEBUG] Raw model response: {"feedback":"Your answer is too brief. Please elaborate with specific examples, context, and details relevant to 'What strategies do you use to manage conflicts within a team?'.","next_question":null}
+2025-12-01 13:28:38,694 [DEBUG] modules.interview_logic: === END OF RESPONSE ===
+2025-12-01 13:28:38,694 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: system/eval_and_question.j2
+2025-12-01 13:28:38,695 [INFO] modules.utils: [DEBUG] Rendered template preview: 
+You are the Interview Engine.
+
+Your job depends on the mode passed into the prompt:
+
+============================================================
+MODE 1: "generate_question"
+============================================================
+
+You generate **ONE** interview question that:
+- matches the job title
+- matches the selected difficulty
+- matches the user's chosen question type
+- explores a DIFFERENT competency area than previous questions
+- avoids repetition of themes, scenarios, or phrasings
+2025-12-01 13:28:38,695 [INFO] modules.utils: [PROMPT BUILDER] category=questions, base=base_instructions.j2, technique=contextual_progression.j2
+2025-12-01 13:28:38,696 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: questions/base_instructions.j2
+2025-12-01 13:28:38,700 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: questions/contextual_progression.j2
+2025-12-01 13:28:38,700 [INFO] modules.utils: [DEBUG] Rendered template preview: Job Title: Furniture Joiner
+Question Type: Behavioral
+Difficulty: Easy
+Previous Answers Summary: []
+
+
+# Contextual Progression Technique
+Using previous answers as soft context, generate a question that builds logically from them while staying aligned with the selected difficulty and type. Do not reference previous answers explicitly.
+Output ONLY the question.
+
+2025-12-01 13:28:41,173 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 13:32:44,914 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: system/eval_and_question.j2
+2025-12-01 13:32:44,914 [INFO] modules.utils: [DEBUG] Rendered template preview: 
+You are the Interview Engine.
+
+Your job depends on the mode passed into the prompt:
+
+============================================================
+MODE 1: "generate_question"
+============================================================
+
+You generate **ONE** interview question that:
+- matches the job title
+- matches the selected difficulty
+- matches the user's chosen question type
+- explores a DIFFERENT competency area than previous questions
+- avoids repetition of themes, scenarios, or phrasings
+2025-12-01 13:32:44,914 [INFO] modules.utils: [PROMPT BUILDER] category=evaluation, base=base_instructions.j2, technique=personality_hiring_manager.j2
+2025-12-01 13:32:44,915 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: evaluation/base_instructions.j2
+2025-12-01 13:32:44,915 [INFO] modules.utils: [DEBUG] Rendered template preview: 
+# Evaluation Base Instructions (Shared Across All Personas)
+
+You will evaluate the candidate's most recent answer.
+
+VARIABLES AVAILABLE:
+- Current question: {{ question }}
+- Candidate's answer: {{ answer }}
+- Previous answers: {% for ans in previous_answers %}{{ loop.index }}. {{ ans }}{% if not loop.last %}\n{% endif %}{% endfor %}
+- Job title: {{ job_title }}
+- Question type: {{ question_type }}
+- Difficulty: {{ difficulty }}
+
+ANSWER QUALITY DETECTION:
+First, categorize the answer quality usi
+2025-12-01 13:32:44,915 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: evaluation/personality_hiring_manager.j2
+2025-12-01 13:32:44,915 [INFO] modules.utils: [DEBUG] Rendered template preview: 
+# Hiring Manager Evaluation Mode
+
+You are evaluating the candidate as a *pragmatic, business-oriented hiring manager*.
+Your goal is to judge whether this person can perform the real job.
+
+Tone:
+- Direct, practical, no-nonsense.
+- Focus on value, outcomes, clarity, and ownership.
+- Avoid corporate fluff.
+
+Structure Your Evaluation:
+1. **What impressed me (from a manager’s perspective)**
+2. **Where this answer concerns me**
+3. **Impact on job performance**
+4. **Actionable advice for improvement**
+2025-12-01 13:32:44,920 [INFO] modules.interview_logic: [DEBUG] User answer:
+I worked with a team to build custom furniture for a client, where each member was responsible for different stages like cutting, assembly, and finishing. My role was to coordinate the workflow, track progress, and ensure everyone had the latest measurements and design updates. I held short daily check-ins and documented key decisions so that all team members stayed aligned, which helped us complete the project efficiently and deliver a high-quality final product.
+2025-12-01 13:32:44,920 [DEBUG] modules.interview_logic: === LLM CALL START ===
+2025-12-01 13:32:44,929 [DEBUG] modules.interview_logic: Structured Output Schema:
+{'format': {'type': 'json_schema', 'name': 'evaluation_result', 'strict': True, 'schema': {'type': 'object', 'properties': {'feedback': {'type': 'string'}, 'next_question': {'type': ['string', 'null']}}, 'required': ['feedback', 'next_question'], 'additionalProperties': False}}}
+2025-12-01 13:32:44,929 [DEBUG] modules.interview_logic: === Sending request to OpenAI ===
+2025-12-01 13:32:44,933 [INFO] modules.interview_logic: [DEBUG] User answer:
+I worked with a team to build custom furniture for a client, where each member was responsible for different stages like cutting, assembly, and finishing. My role was to coordinate the workflow, track progress, and ensure everyone had the latest measurements and design updates. I held short daily check-ins and documented key decisions so that all team members stayed aligned, which helped us complete the project efficiently and deliver a high-quality final product.
+2025-12-01 13:32:47,362 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 13:32:47,364 [DEBUG] modules.interview_logic: === LLM CALL END — Raw Response Below ===
+2025-12-01 13:32:47,364 [INFO] modules.interview_logic: [DEBUG] Raw model response: {"feedback":"Your answer is too brief. Please elaborate with specific examples, context, and details relevant to 'What is your approach to managing a team under tight deadlines?'.","next_question":null}
+2025-12-01 13:32:47,364 [DEBUG] modules.interview_logic: === END OF RESPONSE ===
+2025-12-01 13:32:47,364 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: system/eval_and_question.j2
+2025-12-01 13:32:47,364 [INFO] modules.utils: [DEBUG] Rendered template preview: 
+You are the Interview Engine.
+
+Your job depends on the mode passed into the prompt:
+
+============================================================
+MODE 1: "generate_question"
+============================================================
+
+You generate **ONE** interview question that:
+- matches the job title
+- matches the selected difficulty
+- matches the user's chosen question type
+- explores a DIFFERENT competency area than previous questions
+- avoids repetition of themes, scenarios, or phrasings
+2025-12-01 13:32:47,365 [INFO] modules.utils: [PROMPT BUILDER] category=questions, base=base_instructions.j2, technique=contextual_progression.j2
+2025-12-01 13:32:47,365 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: questions/base_instructions.j2
+2025-12-01 13:32:47,368 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: questions/contextual_progression.j2
+2025-12-01 13:32:47,368 [INFO] modules.utils: [DEBUG] Rendered template preview: Job Title: Furniture Joiner
+Question Type: Behavioral
+Difficulty: Easy
+Previous Answers Summary: ['I worked with a team to build custom cabinets for a client, where each member was responsible for different stages of cutting, assembly, and finishing. I coordinated the workflow, kept track of progress, and regularly updated the team on measurements and design adjustments to ensure everyone stayed aligned. By holding short check-ins and documenting key decisions, we completed the project efficient
+2025-12-01 13:32:49,676 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 13:51:16,544 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: system/job_title_validator.j2
+2025-12-01 13:51:16,547 [INFO] modules.utils: [DEBUG] Rendered template preview: You are an assistant responsible for validating job titles provided by users.
+
+Your task is to:
+- determine whether the job title is valid and commonly recognized,
+- detect ambiguous or unclear entries,
+- request clarification when necessary.
+
+Always respond clearly and concisely. Do not create job titles that do not exist.
+Do not assume meanings that are not supported by the input.
+2025-12-01 13:51:16,547 [INFO] modules.utils: [PROMPT BUILDER] category=validation, base=base_instructions.j2, technique=validate_job_title.j2
+2025-12-01 13:51:16,548 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: validation/base_instructions.j2
+2025-12-01 13:51:16,549 [INFO] modules.utils: [DEBUG] Rendered template preview: You will receive a job title that the user intends to use for an interview simulation.
+
+Your responsibilities:
+1. Assess whether the job title is specific and recognizable.
+2. Identify titles that are too broad, vague, misspelled, or incomplete.
+3. Decide whether clarification is required.
+
+A job title is considered valid when:
+- it corresponds to an established professional role,
+- it is specific enough to guide an interview scenario,
+- it is not simply a domain, industry, or skill area.
+
+If th
+2025-12-01 13:51:16,549 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: validation/validate_job_title.j2
+2025-12-01 13:51:16,550 [INFO] modules.utils: [DEBUG] Rendered template preview: Evaluate the following job title:
+
+"Software Engineer"
+
+Determine:
+- whether it is a valid, specific job title,
+- or whether clarification is required.
+
+If clarification is needed, start your response with:
+"Clarification needed:"
+
+Otherwise, confirm that the title is valid.
+2025-12-01 13:51:20,225 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 13:51:20,301 [INFO] modules.ui.ui_start_screen: Interview started for job_title=Software Engineer
+2025-12-01 13:51:20,372 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: system/eval_and_question.j2
+2025-12-01 13:51:20,373 [INFO] modules.utils: [DEBUG] Rendered template preview: 
+You are the Interview Engine.
+
+Your job depends on the mode passed into the prompt:
+
+============================================================
+MODE 1: "generate_question"
+============================================================
+
+You generate **ONE** interview question that:
+- matches the job title
+- matches the selected difficulty
+- matches the user's chosen question type
+- explores a DIFFERENT competency area than previous questions
+- avoids repetition of themes, scenarios, or phrasings
+2025-12-01 13:51:20,374 [INFO] modules.utils: [PROMPT BUILDER] category=questions, base=base_instructions.j2, technique=contextual_progression.j2
+2025-12-01 13:51:20,374 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: questions/base_instructions.j2
+2025-12-01 13:51:20,382 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: questions/contextual_progression.j2
+2025-12-01 13:51:20,384 [INFO] modules.utils: [DEBUG] Rendered template preview: Job Title: Software Engineer
+Question Type: Role-specific
+Difficulty: Easy
+Previous Answers Summary: []
+
+
+# Contextual Progression Technique
+Using previous answers as soft context, generate a question that builds logically from them while staying aligned with the selected difficulty and type. Do not reference previous answers explicitly.
+Output ONLY the question.
+
+2025-12-01 13:51:22,685 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 13:51:22,687 [INFO] modules.ui.ui_interview: First question generated: 'Can you describe a time when you had to debug a complex issue in your code? What steps did you take to identify and resolve the problem?'
+2025-12-01 13:51:41,088 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: system/eval_and_question.j2
+2025-12-01 13:51:41,088 [INFO] modules.utils: [DEBUG] Rendered template preview: 
+You are the Interview Engine.
+
+Your job depends on the mode passed into the prompt:
+
+============================================================
+MODE 1: "generate_question"
+============================================================
+
+You generate **ONE** interview question that:
+- matches the job title
+- matches the selected difficulty
+- matches the user's chosen question type
+- explores a DIFFERENT competency area than previous questions
+- avoids repetition of themes, scenarios, or phrasings
+2025-12-01 13:51:41,090 [INFO] modules.utils: [PROMPT BUILDER] category=evaluation, base=base_instructions.j2, technique=personality_hiring_manager.j2
+2025-12-01 13:51:41,090 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: evaluation/base_instructions.j2
+2025-12-01 13:51:41,091 [INFO] modules.utils: [DEBUG] Rendered template preview: 
+# Evaluation Base Instructions (Shared Across All Personas)
+
+You will evaluate the candidate's most recent answer.
+
+VARIABLES AVAILABLE:
+- Current question: {{ question }}
+- Candidate's answer: {{ answer }}
+- Previous answers: {% for ans in previous_answers %}{{ loop.index }}. {{ ans }}{% if not loop.last %}\n{% endif %}{% endfor %}
+- Job title: {{ job_title }}
+- Question type: {{ question_type }}
+- Difficulty: {{ difficulty }}
+
+ANSWER QUALITY DETECTION:
+First, categorize the answer quality usi
+2025-12-01 13:51:41,093 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: evaluation/personality_hiring_manager.j2
+2025-12-01 13:51:41,094 [INFO] modules.utils: [DEBUG] Rendered template preview: 
+# Hiring Manager Evaluation Mode
+
+You are evaluating the candidate as a *pragmatic, business-oriented hiring manager*.
+Your goal is to judge whether this person can perform the real job.
+
+Tone:
+- Direct, practical, no-nonsense.
+- Focus on value, outcomes, clarity, and ownership.
+- Avoid corporate fluff.
+
+Structure Your Evaluation:
+1. **What impressed me (from a manager’s perspective)**
+2. **Where this answer concerns me**
+3. **Impact on job performance**
+4. **Actionable advice for improvement**
+2025-12-01 13:51:41,098 [INFO] modules.interview_logic: [DEBUG] User answer:
+I encountered a complex bug in a program where a function intermittently returned incorrect results. I first reproduced the issue consistently, then used logging and step-by-step debugging to trace the problem to a specific section of code with an edge-case I hadn’t handled. After identifying the root cause, I refactored the logic, added unit tests for similar cases, and verified the fix, ensuring the program behaved correctly in all scenarios.
+2025-12-01 13:51:41,098 [DEBUG] modules.interview_logic: === LLM CALL START ===
+2025-12-01 13:51:41,107 [DEBUG] modules.interview_logic: Structured Output Schema:
+{'format': {'type': 'json_schema', 'name': 'evaluation_result', 'strict': True, 'schema': {'type': 'object', 'properties': {'feedback': {'type': 'string'}, 'next_question': {'type': ['string', 'null']}}, 'required': ['feedback', 'next_question'], 'additionalProperties': False}}}
+2025-12-01 13:51:41,107 [DEBUG] modules.interview_logic: === Sending request to OpenAI ===
+2025-12-01 13:51:41,110 [INFO] modules.interview_logic: [DEBUG] User answer:
+I encountered a complex bug in a program where a function intermittently returned incorrect results. I first reproduced the issue consistently, then used logging and step-by-step debugging to trace the problem to a specific section of code with an edge-case I hadn’t handled. After identifying the root cause, I refactored the logic, added unit tests for similar cases, and verified the fix, ensuring the program behaved correctly in all scenarios.
+2025-12-01 13:51:43,503 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 13:51:43,507 [DEBUG] modules.interview_logic: === LLM CALL END — Raw Response Below ===
+2025-12-01 13:51:43,507 [INFO] modules.interview_logic: [DEBUG] Raw model response: {"feedback":"Your answer is too brief. Please elaborate with specific examples, context, and details relevant to 'What strategies do you use to manage your time effectively when working on multiple projects?'.","next_question":null}
+2025-12-01 13:51:43,508 [DEBUG] modules.interview_logic: === END OF RESPONSE ===
+2025-12-01 13:51:43,508 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: system/eval_and_question.j2
+2025-12-01 13:51:43,508 [INFO] modules.utils: [DEBUG] Rendered template preview: 
+You are the Interview Engine.
+
+Your job depends on the mode passed into the prompt:
+
+============================================================
+MODE 1: "generate_question"
+============================================================
+
+You generate **ONE** interview question that:
+- matches the job title
+- matches the selected difficulty
+- matches the user's chosen question type
+- explores a DIFFERENT competency area than previous questions
+- avoids repetition of themes, scenarios, or phrasings
+2025-12-01 13:51:43,510 [INFO] modules.utils: [PROMPT BUILDER] category=questions, base=base_instructions.j2, technique=contextual_progression.j2
+2025-12-01 13:51:43,510 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: questions/base_instructions.j2
+2025-12-01 13:51:43,516 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: questions/contextual_progression.j2
+2025-12-01 13:51:43,516 [INFO] modules.utils: [DEBUG] Rendered template preview: Job Title: Software Engineer
+Question Type: Role-specific
+Difficulty: Easy
+Previous Answers Summary: []
+
+
+# Contextual Progression Technique
+Using previous answers as soft context, generate a question that builds logically from them while staying aligned with the selected difficulty and type. Do not reference previous answers explicitly.
+Output ONLY the question.
+
+2025-12-01 13:51:46,575 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 14:31:30,463 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: system/job_title_validator.j2
+2025-12-01 14:31:30,465 [INFO] modules.utils: [DEBUG] Rendered template preview: You are an assistant responsible for validating job titles provided by users.
+
+Your task is to:
+- determine whether the job title is valid and commonly recognized,
+- detect ambiguous or unclear entries,
+- request clarification when necessary.
+
+Always respond clearly and concisely. Do not create job titles that do not exist.
+Do not assume meanings that are not supported by the input.
+2025-12-01 14:31:30,466 [INFO] modules.utils: [PROMPT BUILDER] category=validation, base=base_instructions.j2, technique=validate_job_title.j2
+2025-12-01 14:31:30,466 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: validation/base_instructions.j2
+2025-12-01 14:31:30,468 [INFO] modules.utils: [DEBUG] Rendered template preview: You will receive a job title that the user intends to use for an interview simulation.
+
+Your responsibilities:
+1. Assess whether the job title is specific and recognizable.
+2. Identify titles that are too broad, vague, misspelled, or incomplete.
+3. Decide whether clarification is required.
+
+A job title is considered valid when:
+- it corresponds to an established professional role,
+- it is specific enough to guide an interview scenario,
+- it is not simply a domain, industry, or skill area.
+
+If th
+2025-12-01 14:31:30,469 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: validation/validate_job_title.j2
+2025-12-01 14:31:30,470 [INFO] modules.utils: [DEBUG] Rendered template preview: Evaluate the following job title:
+
+"Software Engineer"
+
+Determine:
+- whether it is a valid, specific job title,
+- or whether clarification is required.
+
+If clarification is needed, start your response with:
+"Clarification needed:"
+
+Otherwise, confirm that the title is valid.
+2025-12-01 14:31:33,887 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 14:31:33,966 [INFO] modules.ui.ui_start_screen: Interview started for job_title=Software Engineer
+2025-12-01 14:31:34,056 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: system/eval_and_question.j2
+2025-12-01 14:31:34,057 [INFO] modules.utils: [DEBUG] Rendered template preview: 
+You are the Interview Engine.
+
+Your job depends on the mode passed into the prompt:
+
+============================================================
+MODE 1: "generate_question"
+============================================================
+
+You generate **ONE** interview question that:
+- matches the job title
+- matches the selected difficulty
+- matches the user's chosen question type
+- explores a DIFFERENT competency area than previous questions
+- avoids repetition of themes, scenarios, or phrasings
+2025-12-01 14:31:34,059 [INFO] modules.utils: [PROMPT BUILDER] category=questions, base=base_instructions.j2, technique=contextual_progression.j2
+2025-12-01 14:31:34,059 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: questions/base_instructions.j2
+2025-12-01 14:31:34,070 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: questions/contextual_progression.j2
+2025-12-01 14:31:34,072 [INFO] modules.utils: [DEBUG] Rendered template preview: Job Title: Software Engineer
+Question Type: Behavioral
+Difficulty: Hard
+Previous Answers Summary: []
+
+
+# Contextual Progression Technique
+Using previous answers as soft context, generate a question that builds logically from them while staying aligned with the selected difficulty and type. Do not reference previous answers explicitly.
+Output ONLY the question.
+
+2025-12-01 14:31:36,906 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 14:31:36,908 [INFO] modules.ui.ui_interview: First question generated: 'Can you describe a time when you had to advocate for a technical solution that was initially met with resistance from your team? How did you approach the situation and what was the outcome?'
+2025-12-01 14:32:24,463 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: system/eval_and_question.j2
+2025-12-01 14:32:24,463 [INFO] modules.utils: [DEBUG] Rendered template preview: 
+You are the Interview Engine.
+
+Your job depends on the mode passed into the prompt:
+
+============================================================
+MODE 1: "generate_question"
+============================================================
+
+You generate **ONE** interview question that:
+- matches the job title
+- matches the selected difficulty
+- matches the user's chosen question type
+- explores a DIFFERENT competency area than previous questions
+- avoids repetition of themes, scenarios, or phrasings
+2025-12-01 14:32:24,465 [INFO] modules.utils: [PROMPT BUILDER] category=evaluation, base=base_instructions.j2, technique=personality_hiring_manager.j2
+2025-12-01 14:32:24,465 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: evaluation/base_instructions.j2
+2025-12-01 14:32:24,467 [INFO] modules.utils: [DEBUG] Rendered template preview: 
+# Evaluation Base Instructions (Shared Across All Personas)
+
+You will evaluate the candidate's most recent answer.
+
+VARIABLES AVAILABLE:
+- Current question: {{ question }}
+- Candidate's answer: {{ answer }}
+- Previous answers: {% for ans in previous_answers %}{{ loop.index }}. {{ ans }}{% if not loop.last %}\n{% endif %}{% endfor %}
+- Job title: {{ job_title }}
+- Question type: {{ question_type }}
+- Difficulty: {{ difficulty }}
+
+ANSWER QUALITY DETECTION:
+First, categorize the answer quality usi
+2025-12-01 14:32:24,468 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: evaluation/personality_hiring_manager.j2
+2025-12-01 14:32:24,469 [INFO] modules.utils: [DEBUG] Rendered template preview: 
+# Hiring Manager Evaluation Mode
+
+You are evaluating the candidate as a *pragmatic, business-oriented hiring manager*.
+Your goal is to judge whether this person can perform the real job.
+
+Tone:
+- Direct, practical, no-nonsense.
+- Focus on value, outcomes, clarity, and ownership.
+- Avoid corporate fluff.
+
+Structure Your Evaluation:
+1. **What impressed me (from a manager’s perspective)**
+2. **Where this answer concerns me**
+3. **Impact on job performance**
+4. **Actionable advice for improvement**
+2025-12-01 14:32:24,475 [INFO] modules.interview_logic: [DEBUG] User answer:
+I encountered a complex bug in a program where a function intermittently returned incorrect results. I first reproduced the issue consistently, then used logging and step-by-step debugging to trace the problem to a specific section of code with an edge-case I hadn’t handled. After identifying the root cause, I refactored the logic, added unit tests for similar cases, and verified the fix, ensuring the program behaved correctly in all scenarios
+2025-12-01 14:32:24,475 [DEBUG] modules.interview_logic: === LLM CALL START ===
+2025-12-01 14:32:24,483 [DEBUG] modules.interview_logic: Structured Output Schema:
+{'format': {'type': 'json_schema', 'name': 'evaluation_result', 'strict': True, 'schema': {'type': 'object', 'properties': {'feedback': {'type': 'string'}, 'next_question': {'type': ['string', 'null']}}, 'required': ['feedback', 'next_question'], 'additionalProperties': False}}}
+2025-12-01 14:32:24,483 [DEBUG] modules.interview_logic: === Sending request to OpenAI ===
+2025-12-01 14:32:24,487 [INFO] modules.interview_logic: [DEBUG] User answer:
+I encountered a complex bug in a program where a function intermittently returned incorrect results. I first reproduced the issue consistently, then used logging and step-by-step debugging to trace the problem to a specific section of code with an edge-case I hadn’t handled. After identifying the root cause, I refactored the logic, added unit tests for similar cases, and verified the fix, ensuring the program behaved correctly in all scenarios
+2025-12-01 14:32:26,965 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 14:32:26,967 [DEBUG] modules.interview_logic: === LLM CALL END — Raw Response Below ===
+2025-12-01 14:32:26,967 [INFO] modules.interview_logic: [DEBUG] Raw model response: {"feedback":"Your answer is too brief. Please elaborate with specific examples, context, and details relevant to 'What strategies do you use to ensure effective communication within your team?'.","next_question":null}
+2025-12-01 14:32:26,968 [DEBUG] modules.interview_logic: === END OF RESPONSE ===
+2025-12-01 14:32:26,968 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: system/eval_and_question.j2
+2025-12-01 14:32:26,968 [INFO] modules.utils: [DEBUG] Rendered template preview: 
+You are the Interview Engine.
+
+Your job depends on the mode passed into the prompt:
+
+============================================================
+MODE 1: "generate_question"
+============================================================
+
+You generate **ONE** interview question that:
+- matches the job title
+- matches the selected difficulty
+- matches the user's chosen question type
+- explores a DIFFERENT competency area than previous questions
+- avoids repetition of themes, scenarios, or phrasings
+2025-12-01 14:32:26,969 [INFO] modules.utils: [PROMPT BUILDER] category=questions, base=base_instructions.j2, technique=contextual_progression.j2
+2025-12-01 14:32:26,969 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: questions/base_instructions.j2
+2025-12-01 14:32:26,975 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: questions/contextual_progression.j2
+2025-12-01 14:32:26,976 [INFO] modules.utils: [DEBUG] Rendered template preview: Job Title: Software Engineer
+Question Type: Behavioral
+Difficulty: Hard
+Previous Answers Summary: []
+
+
+# Contextual Progression Technique
+Using previous answers as soft context, generate a question that builds logically from them while staying aligned with the selected difficulty and type. Do not reference previous answers explicitly.
+Output ONLY the question.
+
+2025-12-01 14:32:29,270 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 14:41:39,107 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: system/job_title_validator.j2
+2025-12-01 14:41:39,110 [INFO] modules.utils: [PROMPT BUILDER] category=validation, base=base_instructions.j2, technique=validate_job_title.j2
+2025-12-01 14:41:39,110 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: validation/base_instructions.j2
+2025-12-01 14:41:39,111 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: validation/validate_job_title.j2
+2025-12-01 14:41:41,934 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 14:41:42,024 [INFO] modules.ui.ui_start_screen: Interview started for job_title=Dispatcher
+2025-12-01 14:41:42,097 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: system/eval_and_question.j2
+2025-12-01 14:41:42,098 [INFO] modules.utils: [PROMPT BUILDER] category=questions, base=base_instructions.j2, technique=contextual_progression.j2
+2025-12-01 14:41:42,098 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: questions/base_instructions.j2
+2025-12-01 14:41:42,099 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: questions/contextual_progression.j2
+2025-12-01 14:41:44,526 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 14:41:44,530 [INFO] modules.ui.ui_interview: First question generated: 'Describe a time when you had to manage multiple urgent requests simultaneously as a dispatcher. How did you prioritize the tasks and ensure effective communication with your team and clients?'
+2025-12-01 14:42:17,374 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: system/eval_and_question.j2
+2025-12-01 14:42:17,375 [INFO] modules.utils: [PROMPT BUILDER] category=evaluation, base=base_instructions.j2, technique=personality_hiring_manager.j2
+2025-12-01 14:42:17,375 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: evaluation/base_instructions.j2
+2025-12-01 14:42:17,377 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: evaluation/personality_hiring_manager.j2
+2025-12-01 14:42:17,384 [INFO] modules.interview_logic: [DEBUG] User answer:
+"In one shift, I received several urgent calls requiring immediate attention, including emergency pickups and critical deliveries. I quickly assessed each request's urgency, coordinated with team members based on their location and availability, and used a shared communication system to keep everyone updated. By staying organized, delegating efficiently, and maintaining clear communication with clients, all tasks were completed on time without errors.
+2025-12-01 14:42:19,949 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 14:42:19,950 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: system/eval_and_question.j2
+2025-12-01 14:42:19,951 [INFO] modules.utils: [PROMPT BUILDER] category=questions, base=base_instructions.j2, technique=contextual_progression.j2
+2025-12-01 14:42:19,951 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: questions/base_instructions.j2
+2025-12-01 14:42:19,951 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: questions/contextual_progression.j2
+2025-12-01 14:42:22,383 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 14:49:58,208 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: system/job_title_validator.j2
+2025-12-01 14:51:22,273 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: system/job_title_validator.j2
+2025-12-01 14:51:22,276 [INFO] modules.utils: [PROMPT BUILDER] category=validation, base=base_instructions.j2, technique=validate_job_title.j2
+2025-12-01 14:51:22,276 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: validation/base_instructions.j2
+2025-12-01 14:51:22,278 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: validation/validate_job_title.j2
+2025-12-01 14:51:25,608 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 14:51:25,688 [INFO] modules.ui.ui_start_screen: Interview started for job_title=Software Engineer
+2025-12-01 14:51:25,760 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: system/eval_and_question.j2
+2025-12-01 14:51:25,762 [INFO] modules.utils: [PROMPT BUILDER] category=questions, base=base_instructions.j2, technique=contextual_progression.j2
+2025-12-01 14:51:25,762 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: questions/base_instructions.j2
+2025-12-01 14:51:25,764 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: questions/contextual_progression.j2
+2025-12-01 14:51:29,011 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 14:51:29,015 [INFO] modules.ui.ui_interview: First question generated: 'Describe a challenging software project you worked on where you had to integrate multiple technologies. What were the key decisions you made during the integration process, and how did you ensure the final product met the project requirements?'
+2025-12-01 14:52:03,347 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: system/eval_and_question.j2
+2025-12-01 14:52:03,348 [INFO] modules.utils: [PROMPT BUILDER] category=evaluation, base=base_instructions.j2, technique=personality_hiring_manager.j2
+2025-12-01 14:52:03,348 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: evaluation/base_instructions.j2
+2025-12-01 14:52:03,349 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: evaluation/personality_hiring_manager.j2
+2025-12-01 14:52:03,355 [INFO] modules.interview_logic: [DEBUG] User answer:
+"I worked on a project that required integrating a web frontend, a RESTful API, and a machine learning service for real-time recommendations. I carefully evaluated technology compatibility, chose standardized data formats, and implemented modular interfaces to ensure smooth communication between components. Throughout development, I conducted frequent integration tests and code reviews to verify that all parts worked together and met the project requirements.
+2025-12-01 14:52:05,918 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 14:52:06,191 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: system/eval_and_question.j2
+2025-12-01 14:52:06,191 [INFO] modules.utils: [PROMPT BUILDER] category=questions, base=base_instructions.j2, technique=contextual_progression.j2
+2025-12-01 14:52:06,192 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: questions/base_instructions.j2
+2025-12-01 14:52:06,192 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: questions/contextual_progression.j2
+2025-12-01 14:52:08,806 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 14:56:24,863 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: system/eval_and_question.j2
+2025-12-01 14:56:24,865 [INFO] modules.utils: [PROMPT BUILDER] category=evaluation, base=base_instructions.j2, technique=personality_hiring_manager.j2
+2025-12-01 14:56:24,865 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: evaluation/base_instructions.j2
+2025-12-01 14:56:24,867 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: evaluation/personality_hiring_manager.j2
+2025-12-01 14:56:24,874 [INFO] modules.interview_logic: [DEBUG] User answer:
+"I worked on a project that required integrating a web frontend, a RESTful API, and a machine learning service for real-time recommendations. I carefully evaluated technology compatibility, chose standardized data formats, and implemented modular interfaces to ensure smooth communication between components. Throughout development, I conducted frequent integration tests and code reviews to verify that all parts worked together and met the project requirements.
+2025-12-01 14:56:27,386 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-12-01 14:56:27,389 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: system/eval_and_question.j2
+2025-12-01 14:56:27,389 [INFO] modules.utils: [PROMPT BUILDER] category=questions, base=base_instructions.j2, technique=contextual_progression.j2
+2025-12-01 14:56:27,389 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: questions/base_instructions.j2
+2025-12-01 14:56:27,391 [INFO] modules.utils: [PROMPT LOADER] Loading prompt template: questions/contextual_progression.j2
+2025-12-01 14:56:29,801 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"

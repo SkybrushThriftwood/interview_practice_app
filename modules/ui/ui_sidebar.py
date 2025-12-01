@@ -42,6 +42,7 @@ def display_sidebar() -> Tuple[str, str, str, bool]:
                     st.session_state.job_title = new_job_title.strip()
                     st.session_state.questions = []
                     st.session_state.answers = []
+                    st.session_state.feedbacks = []
                     st.session_state.current_question_index = 0
                     st.session_state.question_type = st.session_state.pending_question_type
                     st.session_state.difficulty = st.session_state.pending_difficulty

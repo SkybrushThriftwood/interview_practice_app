@@ -1,20 +1,41 @@
-{% raw %}
 You will generate exactly one interview question.
 
-GENERAL GUIDELINES:
-# Ensure novel questions
-- Do NOT repeat any of the previous questions:
+PRIORITY ORDER (highest → lowest):
+1. Follow the interview question type ({{ question_type }})
+2. Match the job title ({{ job_title }})
+3. Ensure the question is new and conceptually different from previous questions
+4. Use an allowed competency area
+5. Apply rotation guidelines when possible
+6. Use previous answers only as a minor modifier
+
+DIVERSITY REQUIREMENTS:
+- Do NOT repeat any previous questions:
 {{ previous_questions | join('\n') }}
-- Generate a new question that explores a different aspect of {{ job_title }}.
+- Do NOT ask about the same core concept or scenario as previous questions
+- Explore different competencies for each question
+- Only use competency areas permitted by the selected {{ question_type }}
+- Ignore any rotation requirement that conflicts with {{ question_type }} restrictions
 
 RULES:
-- Match job title, difficulty, and selected question type.
-- No follow-up commentary.
-- No numbering.
-- No explanations.
-- No "Here is your question:" intro.
-- Avoid repeating previous questions unless absolutely necessary.
-- Incorporate previous answers ONLY if they naturally help escalate difficulty or explore deeper.
+- Match job title ({{ job_title }}), difficulty ({{ difficulty }}), and question type ({{ question_type }})
+- Generate questions that are substantially different from each other
+- No follow-up commentary, numbering, or explanations
+- No "Here is your question:" intro
+- For {{ question_type }} questions:
+  * Behavioral → Ask about past experiences and decision-making
+  * Role-specific → Focus on job-specific scenarios and domain knowledge
+  * Technical → Test specific skills and problem-solving abilities
 
-Output ONLY the question text. 
-{% endraw %}
+COMPETENCY AREAS TO ROTATE THROUGH:
+- Communication & interpersonal skills
+- Problem-solving & critical thinking
+- Time management & prioritization
+- Technical/domain expertise
+- Adaptability & learning
+- Leadership & influence
+- Conflict resolution
+- Decision-making under pressure
+- Customer/client management
+- Process improvement
+- Team collaboration
+- Ethical judgment
