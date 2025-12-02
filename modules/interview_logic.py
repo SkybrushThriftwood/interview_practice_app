@@ -11,9 +11,8 @@ from modules.config import (
 )
 from typing import Tuple, Optional
 import logging
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)
 
+logger = logging.getLogger(__name__)
 
 # --- MOCK API MODE ---
 mock_questions = [
