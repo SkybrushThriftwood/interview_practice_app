@@ -57,8 +57,6 @@ An AI-powered Streamlit application that simulates realistic job interview scena
 <img src="docs/start_screen.png" width="700" alt="Start Screen"><br>
 *Configure your interview: job title, question type, difficulty, and AI settings*
 
-
-
 ### Interview View
 <img src="docs/interview_view.png" width="700" alt="Interview View"><br>
 *Answer questions and receive immediate feedback from your chosen evaluation persona*
