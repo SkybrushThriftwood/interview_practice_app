@@ -1,10 +1,20 @@
+"""
+ui_sidebar.py
+
+Streamlit sidebar for interview settings:
+- Job title input, question type, difficulty
+- Handles restart flows and job title clarifications
+"""
+
 import streamlit as st
 from typing import Tuple
 from modules.interview_logic import initialize_interview_session, generate_next_question, restart_interview
 from modules.validation import validate_job_title_exists, validate_job_title_with_clarification
+from modules.ui.ui_helpers import advanced_settings_ui
 import logging
 
 logger = logging.getLogger(__name__)
+
 
 def display_sidebar() -> Tuple[str, str, str, bool]:
     """
@@ -38,7 +48,7 @@ def display_sidebar() -> Tuple[str, str, str, bool]:
                 if new_job_title.strip():
                     st.session_state.sidebar_needs_clarification = False
                     st.session_state.sidebar_clarification_message = ""
-                    # Only update live session state now
+                    # Update live session state
                     st.session_state.job_title = new_job_title.strip()
                     st.session_state.questions = []
                     st.session_state.answers = []
@@ -71,7 +81,6 @@ def display_sidebar() -> Tuple[str, str, str, bool]:
         )
 
     # --- Normal sidebar display ---
-    # Job title input
     job_title_input = st.sidebar.text_input(
         "Job Title",
         value=st.session_state.get('pending_job_title', st.session_state.get('job_title', '')),
@@ -79,7 +88,6 @@ def display_sidebar() -> Tuple[str, str, str, bool]:
     )
     st.session_state.pending_job_title = job_title_input or ""
 
-    # Question type dropdown
     question_types = ["Behavioral", "Role-specific", "Technical"]
     current_question_type = st.session_state.get('pending_question_type', st.session_state.get('question_type', 'Behavioral'))
     if current_question_type not in question_types:
@@ -93,7 +101,6 @@ def display_sidebar() -> Tuple[str, str, str, bool]:
     )
     st.session_state.pending_question_type = selected_type
 
-    # Difficulty dropdown
     difficulties = ["Easy", "Medium", "Hard"]
     current_difficulty = st.session_state.get('pending_difficulty', st.session_state.get('difficulty', 'Easy'))
     if current_difficulty not in difficulties:
@@ -106,10 +113,12 @@ def display_sidebar() -> Tuple[str, str, str, bool]:
         key="sidebar_difficulty_input"
     )
     st.session_state.pending_difficulty = selected_difficulty
+    
+    advanced_settings_ui(use_sidebar=True)
+
 
     st.sidebar.markdown("---")
 
-    # Restart button
     should_restart = st.sidebar.button("Restart Interview", key="restart_button")
 
     return (
@@ -119,7 +128,8 @@ def display_sidebar() -> Tuple[str, str, str, bool]:
         should_restart
     )
 
-def handle_sidebar_restart():
+
+def handle_sidebar_restart() -> None:
     """
     Updates live session state and starts a new interview
     based on pending sidebar values. Called when Restart button is pressed.
@@ -134,7 +144,6 @@ def handle_sidebar_restart():
     valid, message = validate_job_title_with_clarification(job_title)
 
     if valid:
-        # Only now update live state
         st.session_state.job_title = job_title
         st.session_state.question_type = st.session_state.pending_question_type
         st.session_state.difficulty = st.session_state.pending_difficulty

@@ -43,7 +43,7 @@ def handle_app_errors(func):
 
         except Exception as exc:
             # Unexpected, uncontrolled errors
-            logger.exception("Unhandled exception in UI")
+            logger.exception(f"Unhandled exception in UI: {exc}")
             st.error("An unexpected error occurred. Please restart the interview.")
 
     return wrapper

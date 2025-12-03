@@ -1,20 +1,21 @@
-import streamlit as st
 import json
-from modules.utils import openai_call, load_prompt, handle_errors, build_prompt
+import logging
+from typing import Tuple, Optional, List
+
+import streamlit as st
+from modules.utils import openai_call, load_prompt, build_prompt
 from modules.config import (
-    USE_MOCK_API, 
-    ACTIVE_QUESTION_TECHNIQUE, 
+    USE_MOCK_API,
+    ACTIVE_QUESTION_TECHNIQUE,
     ACTIVE_SUMMARY_TECHNIQUE,
-    SYSTEM_PROMPTS, 
-    BASE_PROMPTS, 
+    SYSTEM_PROMPTS,
+    BASE_PROMPTS,
     PERSONA_MAP
 )
-from typing import Tuple, Optional
-import logging
 
 logger = logging.getLogger(__name__)
 
-# --- MOCK API MODE ---
+# --- MOCK API DATA FOR LOCAL TESTING ---
 mock_questions = [
     "Mock Q1: Tell me about yourself.",
     "Mock Q2: Why do you want this job?",
@@ -29,55 +30,95 @@ mock_feedback = [
     "Mock Feedback: Nice! Consider elaborating on impact."
 ]
 
-def restart_interview():
+
+# =====================================================================
+# CORE SESSION MANAGEMENT
+# =====================================================================
+
+def restart_interview() -> None:
     """
-    Restarts the interview by resetting question/answer state.
-    Keeps the user in interview mode (started=True).
-    Does NOT reset job_title, question_type, or difficulty.
+    Reset all interview-related state while keeping the user
+    in interview mode.
+
+    Notes:
+        - Job title, difficulty, and question type remain unchanged.
+        - Sidebar clarification state is reset as well.
     """
-    # Reset interview progress only
+    logger.info("Restarting interview: clearing questions, answers, and feedbacks.")
+
     st.session_state.questions = []
     st.session_state.answers = []
     st.session_state.feedbacks = []
     st.session_state.current_question_index = 0
-    
-    # Reset sidebar clarification state
+    st.session_state.input_tokens_total = 0
+    st.session_state.output_tokens_total = 0
+    st.session_state.cost_so_far = 0.0
+
     st.session_state.sidebar_needs_clarification = False
     st.session_state.sidebar_clarification_message = ""
     st.session_state.pending_sidebar_job_title = ""
-    
-    logger.info(f"Clearing feedbacks: {st.session_state.get('feedbacks')}")
+
+    logger.debug("Session after restart: %s", {
+        "questions": st.session_state.questions,
+        "answers": st.session_state.answers,
+        "feedbacks": st.session_state.feedbacks
+    })
+
 
 def initialize_interview_session(job_title: str, question_type: str, difficulty: str) -> None:
     """
-    Initializes the interview session in Streamlit's session state.
-    
+    Initialize a fresh interview session in Streamlit's session state.
+
     Args:
-        job_title (str): The job title for which the interview is conducted.
-        question_type (str): Type of questions (Behavioral, Role-specific, Technical).
-        difficulty (str): Difficulty level (Easy, Medium, Hard).
+        job_title: Position being interviewed for.
+        question_type: Behavioral, Technical, or Role-specific.
+        difficulty: Selected difficulty level.
     """
+    logger.info(
+        "Initializing interview session | job_title=%s | type=%s | difficulty=%s",
+        job_title, question_type, difficulty
+    )
+
     st.session_state.started = True
     st.session_state.job_title = job_title
     st.session_state.question_type = question_type
     st.session_state.difficulty = difficulty
-    st.session_state.questions = []            
-    st.session_state.answers = []              
-    st.session_state.current_question_index = 0  
+
+    st.session_state.questions = []
+    st.session_state.answers = []
+    st.session_state.feedbacks = []
+    st.session_state.current_question_index = 0
+
+
+# =====================================================================
+# EVALUATION LOGIC
+# =====================================================================
 
 def evaluate_answer_and_generate_next(user_answer: str) -> Tuple[str, Optional[str]]:
     """
-    Evaluates the user's answer and optionally generates the next question.
-    Ensures feedback and next_question are always present.
+    Evaluate the user's answer using the selected persona and optionally
+    generate the next question.
+
+    Args:
+        user_answer: The user's free-form text answer.
+
+    Returns:
+        (feedback, next_question)
+        - feedback: The evaluation of the answer.
+        - next_question: Generated follow-up question or None.
     """
+    logger.info("Evaluating user answer for question index %s", st.session_state.current_question_index)
+
+    # --- MOCK MODE ---
     if USE_MOCK_API:
+        logger.debug("Using mock feedback and question.")
         return "Mock feedback: good answer.", "Mock next question."
-    
+
     index = st.session_state.current_question_index
     sys_instructions = load_prompt(SYSTEM_PROMPTS["answer_evaluator"])
+
     selected_persona = st.session_state.evaluation_style
     persona_template = PERSONA_MAP.get(selected_persona, "Hiring Manager")
-
 
     prompt_text = build_prompt(
         category="evaluation",
@@ -86,16 +127,15 @@ def evaluate_answer_and_generate_next(user_answer: str) -> Tuple[str, Optional[s
         job_title=st.session_state.job_title,
         question=st.session_state.questions[index],
         answer=user_answer,
-        previous_answers=st.session_state.answers[:index+1],
-        previous_questions=st.session_state.questions,  
-        difficulty=st.session_state.difficulty,         
+        previous_answers=st.session_state.answers[: index + 1],
+        previous_questions=st.session_state.questions,
+        difficulty=st.session_state.difficulty,
         question_type=st.session_state.question_type,
     )
 
-    logger.info(f"[DEBUG] Evaluation prompt:\n{prompt_text}")
-    logger.info(f"[DEBUG] User answer:\n{user_answer}")
+    logger.debug("Built evaluation prompt.")
+    logger.debug("Evaluation prompt content: %s", prompt_text)
 
-    # Structured JSON schema for response
     response_format = {
         "format": {
             "type": "json_schema",
@@ -105,190 +145,180 @@ def evaluate_answer_and_generate_next(user_answer: str) -> Tuple[str, Optional[s
                 "type": "object",
                 "properties": {
                     "feedback": {"type": "string"},
-                    "next_question": {"type": ["string", "null"]}
+                    "next_question": {"type": ["string", "null"]},
                 },
                 "required": ["feedback", "next_question"],
-                "additionalProperties": False
-            }
+                "additionalProperties": False,
+            },
         }
     }
 
     raw_response = openai_call(
         sys_instructions=sys_instructions,
         prompt_text=prompt_text,
-        temperature=0.4,
-        structured_output=response_format
+        structured_output=response_format,
     )
-    
-    # Always ensure keys exist
+
+    logger.debug("Raw evaluation response: %s", raw_response)
+
     try:
         data = json.loads(raw_response)
         feedback = data.get("feedback", "No feedback returned.")
         next_question = data.get("next_question") or None
     except Exception as e:
-        logger.error(f"Failed to parse evaluation JSON: {e}")
+        logger.error("Failed to parse evaluation JSON: %s", e, exc_info=True)
         feedback = "Error parsing model response."
         next_question = None
 
-    # If model didn’t propose a next question, optionally generate one:
+    # Fallback to ensure continuity
     if not next_question:
+        logger.info("Model did not provide next question — generating manually.")
         next_question = generate_next_question()
 
     return feedback, next_question
 
-@handle_errors(default="Could not generate question. Please try again.")
+
+# =====================================================================
+# QUESTION GENERATION
+# =====================================================================
+
 def generate_next_question() -> str:
     """
-    Generates the next interview question using the selected prompt technique.
-    Uses structured JSON output for more reliable parsing.
-    """
-    # --- MOCK MODE ---
-    if USE_MOCK_API:
-        index = len(st.session_state.questions)
-        return mock_questions[index % len(mock_questions)]
-
-    # --- Load system instructions ---
-    sys_instructions = load_prompt(SYSTEM_PROMPTS["question_generator"])
-
-    # --- Build full prompt ---
-    prompt_content = build_prompt(
-        category="questions",
-        base_instructions=BASE_PROMPTS["question"],
-        technique=ACTIVE_QUESTION_TECHNIQUE,
-        job_title=st.session_state.job_title,
-        question_type=st.session_state.question_type,
-        difficulty=st.session_state.difficulty,
-        previous_answers=st.session_state.answers,
-        previous_questions=st.session_state.questions,           
-    )
-    prompt_text = f"MODE: generate_question\n{prompt_content}"
-
-    if not prompt_text:
-        logger.error("Failed to build question prompt")
-        return "Could not generate question. Please try again."
-
-    # --- Structured output for consistent parsing ---
-    structured_output = {
-        "format": {
-            "type": "json_schema",
-            "name": "question_result",
-            "strict": True,
-            "schema": {
-                "type": "object",
-                "properties": {
-                    "question": {"type": "string", "minLength": 1}
-                },
-                "required": ["question"],
-                "additionalProperties": False
-            }
-        }
-    }
-
-    # --- Call the model ---
-    response = openai_call(
-        sys_instructions=sys_instructions,
-        prompt_text=prompt_text,
-        temperature=0.3,
-        structured_output=structured_output
-    )
-
-    # --- Parse JSON safely ---
-    if response:
-        try:
-            data = json.loads(response)
-            return data.get("question", "Could not generate question. Please try again.")
-        except Exception as e:
-            logger.error(f"Failed to parse question JSON: {e}")
-            # fallback to raw response
-            return response
-
-    return "Could not generate question. Please try again."
-
-def parse_feedback_and_next(result_text: str) -> tuple[str, str]:
-    """
-    Parses the LLM response into feedback and the next question.
-    Expected format: "FEEDBACK: ... NEXT_QUESTION: ..."
+    Generate the next interview question using the configured prompt technique.
 
     Returns:
-        Tuple[str, str]: feedback, next question
+        The generated question as a string.
     """
-    feedback_marker = "FEEDBACK:"
-    question_marker = "NEXT_QUESTION:"
     try:
-        feedback = result_text.split(feedback_marker)[1].split(question_marker)[0].strip()
-        next_question = result_text.split(question_marker)[1].strip()
-        return feedback, next_question
-    except Exception:
-        # Fallback if parsing fails
-        return "Feedback could not be parsed.", result_text
+        # --- MOCK MODE ---
+        if USE_MOCK_API:
+            index = len(st.session_state.questions)
+            return mock_questions[index % len(mock_questions)]
+
+        # --- Load system instructions ---
+        sys_instructions = load_prompt(SYSTEM_PROMPTS["question_generator"])
+
+        # --- Build full prompt ---
+        prompt_content = build_prompt(
+            category="questions",
+            base_instructions=BASE_PROMPTS["question"],
+            technique=ACTIVE_QUESTION_TECHNIQUE,
+            job_title=st.session_state.job_title,
+            question_type=st.session_state.question_type,
+            difficulty=st.session_state.difficulty,
+            previous_answers=st.session_state.answers,
+            previous_questions=st.session_state.questions,
+        )
+        prompt_text = f"MODE: generate_question\n{prompt_content}"
+
+        if not prompt_text:
+            logger.error("Failed to build question prompt")
+            return "Could not generate question. Please try again."
+
+        # --- Structured output for consistent parsing ---
+        structured_output = {
+            "format": {
+                "type": "json_schema",
+                "name": "question_result",
+                "strict": True,
+                "schema": {
+                    "type": "object",
+                    "properties": {"question": {"type": "string", "minLength": 1}},
+                    "required": ["question"],
+                    "additionalProperties": False,
+                },
+            }
+        }
+
+        # --- Call the model ---
+        response = openai_call(
+            sys_instructions=sys_instructions,
+            prompt_text=prompt_text,
+            structured_output=structured_output,
+        )
+
+        # --- Parse JSON safely ---
+        if response:
+            try:
+                data = json.loads(response)
+                return data.get("question", "Could not generate question. Please try again.")
+            except Exception as e:
+                logger.error(f"Failed to parse question JSON: {e}")
+                return response
+
+        return "Could not generate question. Please try again."
+
+    except Exception as e:
+        logger.error(f"Error in generate_next_question: {e}")
+        return "Could not generate question. Please try again."
+
+
+# =====================================================================
+# SUMMARY GENERATION
+# =====================================================================
 
 def generate_interview_summary() -> str:
     """
-    Summarizes the user's performance across all answered questions.
-    
+    Generate a summary of the user's interview performance based on all
+    questions and answers.
+
     Returns:
-        str: A summary highlighting strengths, weaknesses, and actionable suggestions.
+        A plain-text or JSON-formatted summary depending on prompt design.
     """
-    # --- MOCK API for testing ---
+    logger.info("Generating interview summary.")
+
     if USE_MOCK_API:
         return "Mock summary: User performed well overall, needs improvement in problem-solving."
 
-    # --- Load system instructions ---
     sys_instructions = load_prompt(SYSTEM_PROMPTS["summary_generator"])
 
-    # --- Build developer/user prompt dynamically ---
-    questions_and_answers = list(zip(
-        st.session_state.questions,
-        st.session_state.answers
-    ))
+    questions_and_answers = list(zip(st.session_state.questions, st.session_state.answers))
 
-    # Render prompt using base + technique
     prompt_text = build_prompt(
         category="summary",
         base_instructions=BASE_PROMPTS["summary"],
         technique=ACTIVE_SUMMARY_TECHNIQUE,
-        questions_and_answers=questions_and_answers
+        questions_and_answers=questions_and_answers,
     )
 
-    if not prompt_text:
-        logger.error("Failed to build summary prompt")
-        return "Could not generate summary."
+    logger.debug("Summary prompt: %s", prompt_text)
 
-    # --- Call OpenAI API ---
     result = openai_call(
         sys_instructions=sys_instructions,
         prompt_text=prompt_text,
-        temperature=0.5
     )
 
     return result.strip()
 
-def parse_summary(summary_text: str) -> tuple[str, list[str]]:
+
+def parse_summary(summary_text: str) -> Tuple[str, List[str]]:
     """
-    Parses the JSON-formatted summary from the model output.
+    Parse the JSON-formatted interview summary returned by the LLM.
 
     Args:
-        summary_text (str): Raw output from the LLM (expected JSON).
+        summary_text: Raw model output.
 
     Returns:
-        Tuple[str, list[str]]: 
-            - summary: overall summary string
-            - recommendations: list of recommendation strings
+        (summary, recommendations)
+        - summary: plain text summary
+        - recommendations: list of improvements
     """
+    logger.info("Parsing interview summary.")
+
     try:
-        # Attempt to parse JSON directly
         data = json.loads(summary_text)
         summary = data.get("summary", "No summary provided.")
         recommendations = data.get("recommendations", [])
+
         if not isinstance(recommendations, list):
             recommendations = [str(recommendations)]
+
         return summary.strip(), [str(r).strip() for r in recommendations]
 
     except json.JSONDecodeError:
-        # Fallback if model output is not valid JSON
-        logger.warning("Failed to parse JSON from summary. Returning raw text.")
+        logger.warning("Summary JSON decode failed — returning raw text.")
         return summary_text.strip(), []
 
     except Exception as e:
-        logger.error(f"Unexpected error parsing summary: {e}", exc_info=True)
+        logger.error("Unexpected error parsing summary: %s", e, exc_info=True)
         return "Summary could not be parsed.", []

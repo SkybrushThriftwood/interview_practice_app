@@ -6,7 +6,7 @@ authors = ["Thomas <lucke.thomas@gmx.com>"]
 readme = "README.md"
 
 packages = [
-    { include = "src" }
+    { include = "modules" }
 ]
 
 [tool.poetry.dependencies]
@@ -20,7 +20,13 @@ pyyaml = "^6.0.3"
 dotenv = "^0.9.9"
 jinja2 = "^3.1.6"
 tenacity = "^9.1.2"
+pytest = "^9.0.1"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest-cov (>=7.0.0,<8.0.0)"
+]

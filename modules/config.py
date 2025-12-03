@@ -1,41 +1,66 @@
+"""
+config.py
+
+Project-wide configuration for the Interview Practice App.
+
+Includes:
+- API mode flags
+- Directory paths
+- Template paths and techniques
+- System prompts and base instructions
+- Persona mappings and evaluation descriptions
+"""
+
 import os
+from dotenv import load_dotenv
 
-USE_MOCK_API = False
+# Load environment variables from .env
+load_dotenv()
 
-# Base project directory
+# --- Configurable parameters from .env ---
+USE_MOCK_API = os.getenv("USE_MOCK_API", "False") == "True"
+ACTIVE_QUESTION_TECHNIQUE = os.getenv("ACTIVE_QUESTION_TECHNIQUE", "contextual_progression.j2")
+ACTIVE_SUMMARY_TECHNIQUE = os.getenv("ACTIVE_SUMMARY_TECHNIQUE", "default.j2")
+ACTIVE_VALIDATION_TECHNIQUE = os.getenv("ACTIVE_VALIDATION_TECHNIQUE", "validate_job_title.j2")
+
+# --- Base project directory ---
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Jinja2 template folder
-PROMPTS_TEMPLATE_DIR = os.path.join(BASE_DIR, "prompts")
-
-# Active techniques
-ACTIVE_QUESTION_TECHNIQUE = "contextual_progression.j2"
-ACTIVE_SUMMARY_TECHNIQUE = "default.j2"
-ACTIVE_VALIDATION_TECHNIQUE = "validate_job_title.j2"
+PROMPTS_TEMPLATE_DIR = os.getenv("PROMPTS_TEMPLATE_DIR", os.path.join(BASE_DIR, "prompts"))
 
 # System instruction templates
 SYSTEM_PROMPTS = {
-    "job_title_validator": "system/job_title_validator.j2",
-    "question_generator": "system/eval_and_question.j2",
-    "answer_evaluator": "system/eval_and_question.j2",
-    "summary_generator": "system/summary_generator.j2",
+    "job_title_validator": os.getenv(
+        "SYSTEM_JOB_TITLE_VALIDATOR", "system/job_title_validator.j2"
+    ),
+    "question_generator": os.getenv(
+        "SYSTEM_QUESTION_GENERATOR", "system/question.j2"
+    ),
+    "answer_evaluator": os.getenv(
+        "SYSTEM_ANSWER_EVALUATOR", "system/evaluation.j2"
+    ),
+    "summary_generator": os.getenv(
+        "SYSTEM_SUMMARY_GENERATOR", "system/summary_generator.j2"
+    ),
 }
 
 # Base instruction templates per category
 BASE_PROMPTS = {
-    "evaluation": "base_instructions.j2",
-    "validation": "base_instructions.j2",
-    "summary": "base_instructions.j2",
-    "question": "base_instructions.j2",
+    "evaluation": os.getenv("BASE_PROMPT_EVALUATION", "base_instructions.j2"),
+    "validation": os.getenv("BASE_PROMPT_VALIDATION", "base_instructions.j2"),
+    "summary": os.getenv("BASE_PROMPT_SUMMARY", "base_instructions.j2"),
+    "question": os.getenv("BASE_PROMPT_QUESTION", "base_instructions.j2"),
 }
 
+# Personas
 PERSONA_MAP = {
-            "Hiring Manager": "personality_hiring_manager.j2",
-            "HR Professional": "personality_hr.j2",
-            "Ideal Candidate": "personality_ideal_candidate.j2",
-            "Mentor": "personality_mentor.j2",
-            "Subject Matter Expert": "personality_sme.j2",
-        }
+    "Hiring Manager": os.getenv("PERSONA_HIRING_MANAGER", "personality_hiring_manager.j2"),
+    "HR Professional": os.getenv("PERSONA_HR", "personality_hr.j2"),
+    "Ideal Candidate": os.getenv("PERSONA_IDEAL_CANDIDATE", "personality_ideal_candidate.j2"),
+    "Mentor": os.getenv("PERSONA_MENTOR", "personality_mentor.j2"),
+    "Subject Matter Expert": os.getenv("PERSONA_SME", "personality_sme.j2"),
+}
 
 EVALUATION_PERSONAS = {
     "Hiring Manager": "Focuses on how a candidate would be assessed for hiring suitability.",
@@ -43,4 +68,25 @@ EVALUATION_PERSONAS = {
     "Ideal Candidate": "Provides feedback from the perspective of a top-performing candidate, someone who has mastered this job and knows exactly what excellence looks like. They will highlight what you did well and what could be improved in your answer.",
     "Mentor": "Offers constructive, step-by-step guidance for learning and improvement.",
     "Subject Matter Expert": "Focuses on technical accuracy and domain expertise; may skip behavioral aspects."
+}
+
+OPENAI_MODELS = [
+    "gpt-4o-mini",
+    "gpt-4o",
+    "gpt-5-mini",
+    "gpt-5-nano"
+]
+
+
+COST_PER_1M_INPUT_TOKENS = {
+    "gpt-4o-mini": 0.15,
+    "gpt-4o":2.50,
+    "gpt-5-mini": 0.25,
+    "gpt-5-nano": 0.05
+}
+COST_PER_1M_OUTPUT_TOKENS = {
+    "gpt-4o-mini": 0.075,
+    "gpt-4o": 1.25,
+    "gpt-5-mini": 0.025,
+    "gpt-5-nano": 0.005
 }
