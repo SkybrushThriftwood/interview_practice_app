@@ -73,20 +73,21 @@ EVALUATION_PERSONAS = {
 OPENAI_MODELS = [
     "gpt-4o-mini",
     "gpt-4o",
-    "gpt-5-mini",
-    "gpt-5-nano"
-]
+    "gpt-4.1",
+    ]
 
 
 COST_PER_1M_INPUT_TOKENS = {
     "gpt-4o-mini": 0.15,
     "gpt-4o":2.50,
-    "gpt-5-mini": 0.25,
-    "gpt-5-nano": 0.05
+    "o3-mini": 1.10,
+    "gpt-5": 1.25,
+    "gpt-4.1":2.00
 }
 COST_PER_1M_OUTPUT_TOKENS = {
     "gpt-4o-mini": 0.075,
     "gpt-4o": 1.25,
-    "gpt-5-mini": 0.025,
-    "gpt-5-nano": 0.005
+    "o3-mini": 4.40,
+    "gpt-5": 10.00,
+    "gpt-4.1":8.00
 }
