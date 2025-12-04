@@ -107,6 +107,7 @@ def _call_openai(
 def openai_call(
     sys_instructions: str,
     prompt_text: str,
+    max_tokens: int | None = None,
     structured_output: dict | None = None,
 ) -> str:
     """
@@ -123,12 +124,13 @@ def openai_call(
     try:
         # Pull OpenAI parameters from Streamlit session state
         settings = get_openai_settings()
+        max_tokens = max_tokens if max_tokens is not None else settings["max_tokens"]
         return _call_openai(
             sys_instructions=sys_instructions,
             prompt_text=prompt_text,
             model=settings["model"],
             temperature=settings["temperature"],
-            max_tokens=settings["max_tokens"],
+            max_tokens=max_tokens,
             structured_output=structured_output,
         )
     

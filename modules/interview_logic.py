@@ -1,9 +1,9 @@
 import json
 import logging
 from typing import Tuple, Optional, List
-
 import streamlit as st
 from modules.utils import openai_call, load_prompt, build_prompt
+from modules.session_state import get_openai_settings
 from modules.config import (
     USE_MOCK_API,
     ACTIVE_QUESTION_TECHNIQUE,
@@ -120,6 +120,8 @@ def evaluate_answer_and_generate_next(user_answer: str) -> Tuple[str, Optional[s
     selected_persona = st.session_state.evaluation_style
     persona_template = PERSONA_MAP.get(selected_persona, "Hiring Manager")
 
+    settings = get_openai_settings()
+
     prompt_text = build_prompt(
         category="evaluation",
         base_instructions=BASE_PROMPTS["evaluation"],
@@ -127,6 +129,7 @@ def evaluate_answer_and_generate_next(user_answer: str) -> Tuple[str, Optional[s
         job_title=st.session_state.job_title,
         question=st.session_state.questions[index],
         answer=user_answer,
+        max_tokens_eval=settings["max_tokens_eval"],
         previous_answers=st.session_state.answers[: index + 1],
         previous_questions=st.session_state.questions,
         difficulty=st.session_state.difficulty,
@@ -152,10 +155,10 @@ def evaluate_answer_and_generate_next(user_answer: str) -> Tuple[str, Optional[s
             },
         }
     }
-
     raw_response = openai_call(
         sys_instructions=sys_instructions,
         prompt_text=prompt_text,
+        max_tokens=st.session_state["max_tokens_question_and_summary"],
         structured_output=response_format,
     )
 
@@ -234,6 +237,7 @@ def generate_next_question() -> str:
         response = openai_call(
             sys_instructions=sys_instructions,
             prompt_text=prompt_text,
+            max_tokens=st.session_state["max_tokens_question_and_summary"],
             structured_output=structured_output,
         )
 
@@ -285,6 +289,7 @@ def generate_interview_summary() -> str:
 
     result = openai_call(
         sys_instructions=sys_instructions,
+        max_tokens=st.session_state["max_tokens_question_and_summary"],
         prompt_text=prompt_text,
     )
 

@@ -36,11 +36,11 @@ def advanced_settings_ui(use_sidebar: bool = False):
         )
 
         # Max tokens
-        st.session_state.max_tokens = st.number_input(
+        st.session_state.max_tokens_eval = st.number_input(
             "Max Tokens",
             min_value=1,
             max_value=2000,
-            value=st.session_state.get("max_tokens", 250),
+            value=st.session_state.get("max_tokens_eval", 250),
             step=10,
             help="Maximum length of the AI's response. Bigger = longer answers."
         )

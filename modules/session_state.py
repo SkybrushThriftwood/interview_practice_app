@@ -42,7 +42,9 @@ def initialize_session_state() -> None:
         # Advanced OpenAI defaults
         "model": "gpt-4o-mini",
         "temperature": 0.2,
-        "max_tokens": 250,
+        "max_tokens_eval": 250,
+        "max_tokens_question_and_summary": 800,
+
 
         # --- Token usage / cost tracking ---
         "input_tokens_total": 0,
@@ -61,5 +63,5 @@ def get_openai_settings() -> dict:
     return {
         "model": st.session_state.get("model", "gpt-4o-mini"),
         "temperature": st.session_state.get("temperature", 0.2),
-        "max_tokens": st.session_state.get("max_tokens", 250),
+        "max_tokens_eval": st.session_state.get("max_tokens_eval", 250),
     }
